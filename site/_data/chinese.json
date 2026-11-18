@@ -1,0 +1,21 @@
+{
+  "topics": {
+    "Orientation": "学习导读", "Robotics fundamentals": "机器人基础", "Kinematics": "运动学",
+    "Motion and control": "运动与控制", "Control": "控制", "Perception and estimation": "感知与估计",
+    "Perception": "感知", "Planning and autonomy": "规划与自主决策", "ROS 2": "ROS 2",
+    "Simulation": "仿真", "Isaac Sim": "Isaac Sim", "Robot learning": "机器人学习", "LeRobot": "LeRobot",
+    "Infrastructure": "基础设施", "Field engineering": "现场工程", "Capstone": "综合项目", "Professional practice": "职业实践"
+  },
+  "tracks": {
+    "foundations": {"title": "从零开始学机器人", "outcome": "先用 Python 写一个闭环程序，再理解单位、坐标系、采样与建模假设。"},
+    "motion": {"title": "运动与控制", "outcome": "建立机器人运动模型，处理限位与奇异点，设计反馈控制和运动轨迹。"},
+    "sensing": {"title": "感知与状态估计", "outcome": "标定传感器、估计机器人状态，并区分定位、建图与 SLAM。"},
+    "autonomy": {"title": "规划与自主决策", "outcome": "规划并验证移动导航与机械臂操作，设计计划失败时的应对行为。"},
+    "ros-2": {"title": "机器人软件与 ROS 2", "outcome": "搭建工作空间，设计软件接口，验证消息传输、坐标变换与数据回放。"},
+    "isaac-sim": {"title": "仿真与数字实验", "outcome": "按问题选择仿真器，开展对照实验，并通过 ROS 2 接收虚拟传感器数据。"},
+    "lerobot": {"title": "机器人学习", "outcome": "对比经典策略与学习策略，审查示范数据，评估闭环任务表现。"},
+    "infrastructure": {"title": "基础设施与运维", "outcome": "锁定环境版本，排查 GPU 和 DDS 问题，估算存储需求，让测试可复现。"},
+    "field": {"title": "硬件、实时性与现场工程", "outcome": "理解嵌入式系统，分析实时截止期限，制定安全调试与验证计划。"},
+    "capstone": {"title": "项目与职业实践", "outcome": "完成移动机器人或桌面操作项目，用测试、日志和设计决策展示工程能力。"}
+  }
+}

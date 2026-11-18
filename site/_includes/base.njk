@@ -1,20 +1,26 @@
+{% set locale = lang or "en" %}
+{% set labels = copy[locale] %}
+{% set alternate = "en" if locale == "zh-CN" else "zh-CN" %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ locale }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ description | escape }}">
+  <meta name="description" content="{{ (description or labels.homeDescription) | escape }}">
   <title>{% if title %}{{ title | escape }} · {% endif %}Robo Study</title>
+  <link rel="alternate" hreflang="en" href="{{ page.url | localizedUrl('en') }}">
+  <link rel="alternate" hreflang="zh-CN" href="{{ page.url | localizedUrl('zh-CN') }}">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">{{ labels.skip }}</a>
   <header class="top shell">
-    <a class="brand" href="/"><img src="/assets/icon.svg" alt="" width="32" height="32"> Robo Study</a>
-    <nav aria-label="Main navigation">
-      <a href="/#notes">Contents</a>
-      <a href="/demos/">Labs</a>
+    <a class="brand" href="{{ '/' | localizedUrl(locale) }}"><img src="/assets/icon.svg" alt="" width="32" height="32"> Robo Study</a>
+    <nav aria-label="{{ labels.navigation }}">
+      <a href="{{ '/#notes' | localizedUrl(locale) }}">{{ labels.contents }}</a>
+      <a href="{{ '/demos/' | localizedUrl(locale) }}">{{ labels.labs }}</a>
+      <a class="language-switch" href="{{ page.url | localizedUrl(alternate) }}" hreflang="{{ alternate }}" lang="{{ alternate }}">{{ "English" if alternate == "en" else "简体中文" }}</a>
       <a href="https://github.com/sunnyday9/robo-study">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -22,8 +28,8 @@
     {{ content | safe }}
   </main>
   <footer class="footer shell">
-    <span>Robo Study · A robotics engineering textbook</span>
-    <a href="https://github.com/sunnyday9/robo-study/issues">Suggest a correction <span aria-hidden="true">↗</span></a>
+    <span>{{ labels.footer }}</span>
+    <a href="https://github.com/sunnyday9/robo-study/issues">{{ labels.correction }} <span aria-hidden="true">↗</span></a>
   </footer>
 </body>
 </html>

@@ -23,6 +23,8 @@ See [the course review](docs/course-review.md) for version choices and the disti
 
 Create a Markdown file under `site/notes/`. Set `title`, `topic`, a short `description`, and an unused quoted three-digit `order` in its front matter. Use `prerequisites` and `minutes` for chapter metadata. The index groups chapters using `site/_data/tracks.json`; use an existing topic or add it to a part.
 
+Add the Simplified Chinese edition at the same filename under `site/zh/notes/`. Keep `topic`, `order`, code fences, and image assets identical; translate metadata and prose, including captions, alt text, and exercise solutions. Use `/zh/notes/…` and `/zh/demos/…` for Chinese links. For a link to a specific section in both languages, give the two headings the same explicit ID.
+
 Start with a problem and an observable outcome. Explain the mechanics with a diagram or concrete trace, then walk through a small build and change one input intentionally. Label expected, illustrative, and measured results distinctly. Close with a transfer exercise and a concise summary. Put solutions in `<details>` blocks. Level-two headings appear in the lecture outline; link to other notes using paths like `/notes/coordinate-frames/`.
 
 ## Publish to Vercel

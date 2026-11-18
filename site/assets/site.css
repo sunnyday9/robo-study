@@ -32,6 +32,9 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 .top a:hover, .back:hover { text-decoration: underline; }
 .brand { font-weight: 750; letter-spacing: -.025em; }
 .top nav { display: flex; gap: clamp(1rem, 3vw, 2rem); font-size: .9rem; }
+.top nav .language-switch { padding-inline: .65rem; border: 1px solid var(--line); border-radius: .38rem; white-space: nowrap; }
+:lang(zh-CN) .prose { line-height: 1.85; }
+:lang(zh-CN) :is(h1, h2, h3, h4) { letter-spacing: normal; }
 
 .hero { display: grid; align-items: center; gap: 2rem; padding-block: clamp(3rem, 8vw, 6rem); }
 .hero-copy { display: grid; justify-items: start; gap: 1.35rem; }
@@ -138,6 +141,7 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 @media (max-width: 26rem) {
   .shell { width: calc(100% - 2rem); }
   .top { gap: .4rem; }
-  .top nav { gap: .65rem; }
+  .top nav { gap: .55rem; flex-wrap: wrap; justify-content: flex-end; padding-block: .3rem; }
+  .top nav .language-switch { padding-inline: .45rem; }
   .brand img { width: 26px; height: 26px; }
 }

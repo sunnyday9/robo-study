@@ -1,0 +1,32 @@
+{
+  "en": {
+    "contents": "Contents", "labs": "Labs", "navigation": "Main navigation",
+    "skip": "Skip to content", "footer": "Robo Study · A robotics engineering textbook",
+    "correction": "Suggest a correction", "back": "← Table of contents",
+    "prerequisites": "Before you start", "time": "Study time", "minutes": "min",
+    "outline": "In this lecture", "next": "Next chapter", "continue": "Continue learning",
+    "homeDescription": "A robotics engineering textbook for software developers, from first principles to simulated projects and field engineering.",
+    "notebook": "THE ROBOTICS NOTEBOOK", "headline": "Robotics from first principles.",
+    "intro": "No robotics background required. Start with a Python robot loop, then work through motion, sensing, autonomy, deployment, and the practice of building reliable robots.",
+    "start": "Start here", "careers": "Explore career paths",
+    "figureAlt": "Schematic of a two-joint arm with a base coordinate frame and an end-effector coordinate frame.",
+    "figureNumber": "FIG. 01", "figureCaption": "PLANAR ARM / FRAME SKETCH",
+    "bookIndex": "BOOK INDEX", "chapters": "chapters", "toc": "Table of contents",
+    "core": "Read the common core, then choose a role and build a project.", "parts": "Book parts", "part": "Part"
+  },
+  "zh-CN": {
+    "contents": "目录", "labs": "实验", "navigation": "主导航",
+    "skip": "跳到正文", "footer": "Robo Study · 机器人系统工程教材",
+    "correction": "提交勘误", "back": "← 返回目录",
+    "prerequisites": "学习准备", "time": "预计用时", "minutes": "分钟",
+    "outline": "本章内容", "next": "下一章", "continue": "继续学习",
+    "homeDescription": "面向软件开发者的机器人系统工程教材，从基础原理讲到仿真项目与现场工程实践。",
+    "notebook": "机器人学习手册", "headline": "从基本原理学机器人",
+    "intro": "不需要机器人基础。先用 Python 写出一个闭环控制程序，再学习运动、感知、自主决策、部署，以及如何构建可靠的机器人系统。",
+    "start": "从这里开始", "careers": "了解职业方向",
+    "figureAlt": "双关节机械臂示意图，标出了基座坐标系和末端执行器坐标系。",
+    "figureNumber": "图 01", "figureCaption": "平面机械臂与坐标系",
+    "bookIndex": "全书目录", "chapters": "章", "toc": "学习目录",
+    "core": "先学共通基础，再选一个方向，动手完成一个项目。", "parts": "全书各篇", "part": "第"
+  }
+}

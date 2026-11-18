@@ -3,21 +3,23 @@ layout: base.njk
 ---
 <div class="lecture-layout">
 <article class="reader lecture">
-  {% set notes = collections.notes | sort(attribute="data.order") %}
-  <a class="back" href="/#notes">← Table of contents</a>
+  {% set locale = lang or "en" %}
+  {% set labels = copy[locale] %}
+  {% set notes = collections.notes | localizedNotes(locale) %}
+  <a class="back" href="{{ '/#notes' | localizedUrl(locale) }}">{{ labels.back }}</a>
   <header class="note-heading">
-    <p class="eyebrow">{{ order | escape }} / {{ topic | escape }}</p>
+    <p class="eyebrow">{{ order | escape }} / {{ (chinese.topics[topic] if locale == "zh-CN" else topic) | escape }}</p>
     <h1>{{ title | escape }}</h1>
     <p>{{ description | escape }}</p>
   </header>
   {% if prerequisites or minutes %}
   <dl class="note-meta">
-    {% if prerequisites %}<div><dt>Before you start</dt><dd>{{ prerequisites | escape }}</dd></div>{% endif %}
-    {% if minutes %}<div><dt>Study time</dt><dd>{{ minutes }} min</dd></div>{% endif %}
+    {% if prerequisites %}<div><dt>{{ labels.prerequisites }}</dt><dd>{{ prerequisites | escape }}</dd></div>{% endif %}
+    {% if minutes %}<div><dt>{{ labels.time }}</dt><dd>{{ minutes }} {{ labels.minutes }}</dd></div>{% endif %}
   </dl>
   {% endif %}
-  <nav class="lecture-outline" aria-label="In this lecture" hidden>
-    <p class="eyebrow">IN THIS LECTURE</p>
+  <nav class="lecture-outline" aria-label="{{ labels.outline }}" hidden>
+    <p class="eyebrow">{{ labels.outline }}</p>
     <ol></ol>
   </nav>
   <div class="prose lecture-body">
@@ -25,7 +27,7 @@ layout: base.njk
   </div>
   {% for note in notes %}
     {% if note.url == page.url and not loop.last %}
-      <nav class="next-note" aria-label="Continue learning"><a href="{{ notes[loop.index].url }}">Next chapter: {{ notes[loop.index].data.title | escape }} →</a></nav>
+      <nav class="next-note" aria-label="{{ labels.continue }}"><a href="{{ notes[loop.index].url }}">{{ labels.next }}: {{ notes[loop.index].data.title | escape }} →</a></nav>
     {% endif %}
   {% endfor %}
 </article>

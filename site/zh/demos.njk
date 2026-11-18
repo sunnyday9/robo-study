@@ -1,0 +1,96 @@
+---
+layout: base.njk
+lang: zh-CN
+title: 浏览器实验
+description: 在浏览器里动手探索坐标变换、传感器时序和数据对齐。
+permalink: /zh/demos/
+---
+<article class="reader labs">
+  <a class="back" href="/zh/#notes">← 返回目录</a>
+  <header class="note-heading">
+    <p class="eyebrow">无需安装</p>
+    <h1>浏览器实验</h1>
+    <p>这些小实验让你每次只改变一个变量。它们不运行 ROS 2、Isaac Sim 或 LeRobot。</p>
+  </header>
+  <noscript><p>启用 JavaScript 后可以修改输入。图中显示的是默认状态。</p></noscript>
+
+  <section class="lab" aria-labelledby="frame-title" id="frame-lab">
+    <p class="eyebrow">01 / 位置</p>
+    <h2 id="frame-title">基座不动，坐标会怎么变？</h2>
+    <p>有一个点固定在传感器自身 x 轴正方向 1 米处。传感器原点在基座坐标系中为 (2, 1) m。转动传感器，先预测该点在基座坐标系中的位置。</p>
+    <label for="frame-angle">传感器角度（逆时针为正，单位：度）</label>
+    <input id="frame-angle" type="range" min="-180" max="180" step="15" value="90">
+    <svg class="lab-plot" viewBox="0 0 480 270" role="img" aria-labelledby="frame-plot-title">
+      <title id="frame-plot-title">Base axes, sensor axes, and the transformed point</title>
+      <path class="lab-grid" d="M80 60H410M80 110H410M80 160H410M130 30V210M180 30V210M230 30V210M280 30V210M330 30V210M380 30V210"/>
+      <path class="lab-axis" d="M130 30V210H410"/>
+      <g fill="currentColor" font-size="15">
+        <text x="410" y="231">x base</text>
+        <text x="70" y="37">y base</text>
+        <text x="120" y="234">0</text>
+        <text x="173" y="234">1</text>
+        <text x="224" y="234">2</text>
+        <text x="274" y="234">3</text>
+        <text x="107" y="165">1</text>
+        <text x="107" y="115">2</text>
+      </g>
+      <g transform="translate(230 160)">
+        <g id="sensor-axes" transform="rotate(-90)">
+          <path class="sensor-axis" d="M0 0H50M0 0V-35"/>
+          <path class="sensor-axis" d="m-5-27 5-8 5 8"/>
+          <circle cx="50" cy="0" r="6" fill="#9a4424"/>
+        </g>
+        <circle r="5" fill="#22694d"/>
+        <text x="10" y="21" fill="currentColor" font-size="15">sensor origin</text>
+      </g>
+    </svg>
+    <output id="frame-result" for="frame-angle">90° → 基座坐标：(2.00, 2.00) m</output>
+    <p class="lab-caption">橙色点位于传感器的 x 轴正方向。<a href="/zh/notes/coordinate-frames/">阅读坐标系章节</a>。</p>
+  </section>
+
+  <section class="lab" aria-labelledby="clock-title" id="clock-lab">
+    <p class="eyebrow">02 / 时间</p>
+    <h2 id="clock-title">什么时候能用到所需的坐标变换？</h2>
+    <p>模拟相机图像的时间戳为 1,000 ms。TF 缓冲区中已有 900 ms 的样本，你还可以设置最新样本的时间。能在图像采集的时刻查到坐标变换吗？</p>
+    <label for="tf-time">最新变换的时间戳（ms）</label>
+    <input id="tf-time" type="range" min="900" max="1100" step="10" value="970">
+    <svg class="lab-plot" viewBox="0 0 480 170" role="img" aria-labelledby="clock-plot-title">
+      <title id="clock-plot-title">Timeline with a camera stamp at 1,000 ms and two transform samples</title>
+      <path class="lab-axis" d="M55 115H425"/>
+      <path class="lab-grid" d="M60 105v22m90-22v22m90-22v22m90-22v22m90-22v22"/>
+      <g fill="currentColor" font-size="15" text-anchor="middle">
+        <text x="60" y="150">900</text><text x="150" y="150">950</text><text x="240" y="150">1,000</text><text x="330" y="150">1,050</text><text x="420" y="150">1,100 ms</text>
+        <text x="240" y="29">Camera stamp</text>
+        <text x="60" y="84">Older TF</text>
+        <text id="tf-marker-label" x="186" y="61">Newest TF</text>
+      </g>
+      <path d="M240 39v76" stroke="#9a4424" stroke-width="2" stroke-dasharray="4 3"/>
+      <circle cx="60" cy="115" r="6" fill="#22694d"/>
+      <circle id="tf-marker" cx="186" cy="115" r="6" fill="#22694d"/>
+    </svg>
+    <output id="tf-result" for="tf-time">970 ms → 请求的时间晚于缓冲区里最新的样本。</output>
+    <p class="lab-caption">这里假设所有数据使用同一仿真时钟，只有一条动态变换，也没有其他样本。完整的 TF 链路要求每条边都有有效数据。<a href="/zh/notes/ros2-frames-and-time/">阅读坐标系和时间章节</a>。</p>
+  </section>
+
+  <section class="lab" aria-labelledby="alignment-title" id="alignment-lab">
+    <p class="eyebrow">03 / 示范数据</p>
+    <h2 id="alignment-title">找出错一帧的数据对齐问题</h2>
+    <p>脚本策略在第 3 帧执行抓取。如果导出时给观测配上另一行的动作，即使文件格式完全正确，模仿学习也会读到错位的标签。</p>
+    <label for="action-offset">动作取自哪一行？</label>
+    <select id="action-offset">
+      <option value="-1">上一行（−1）</option>
+      <option value="0" selected>同一行（0）</option>
+      <option value="1">下一行（+1）</option>
+    </select>
+    <div class="alignment" role="group" aria-label="与观测帧配对的动作标签">
+      <div><strong>第 1 帧</strong><span data-action>接近</span></div>
+      <div><strong>第 2 帧</strong><span data-action>接近</span></div>
+      <div><strong>第 3 帧</strong><span data-action>抓取</span></div>
+      <div><strong>第 4 帧</strong><span data-action>抬起</span></div>
+      <div><strong>第 5 帧</strong><span data-action>抬起</span></div>
+    </div>
+    <output id="alignment-result" for="action-offset">抓取动作与第 3 帧配对。</output>
+    <p class="lab-caption">超出范围的行标记为缺失，不能跨回合配对。配在同一行，是因为本实验使用动作执行前的观测。<a href="/zh/notes/lerobot-data/">阅读示范数据集章节</a>。</p>
+  </section>
+</article>
+<script src="/assets/demos-zh.js" defer></script>
