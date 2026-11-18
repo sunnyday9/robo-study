@@ -1,7 +1,7 @@
 ---
 title: "Build and run a ROS 2 workspace"
 topic: "ROS 2"
-order: "10"
+order: "061"
 description: "Build a Jazzy Python node and trace how a shell finds the installed package."
 prerequisites: "Basic Python and a Bash shell on Ubuntu 24.04."
 minutes: 40

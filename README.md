@@ -1,6 +1,6 @@
 # Robo Study
 
-A lecture-based self-study course for developers who already know Python, data structures, and basic machine learning. Learn the reasoning and development process behind ROS 2, Isaac Sim, LeRobot, and robotics infrastructure. The browser labs and CPU capstone exercises need no robotics runtime.
+A hands-on robotics textbook for developers who know basic Python but are new to robotics. Learn motion and control, perception and estimation, planning, ROS 2, simulation, robot learning, infrastructure, and field engineering. The first experiments and CPU capstone exercises need no robotics runtime.
 
 ## Preview locally
 
@@ -15,13 +15,13 @@ Open the local URL printed in the terminal. Run `npm run build` to generate the 
 
 ## Study order
 
-Review frames, control, and projection if needed. Start ROS 2 on a supported CPU environment, then choose an Isaac Sim system using the compatibility guide. Use the LeRobot track to validate data and evaluate a baseline, and the infrastructure track when moving between machines or preparing reproducible runs. The tabletop capstone has separate replay, simulation, and learning gates; it does not require a real robot.
+Start with the first Python robot loop, then work through the common core in motion, sensing, estimation, and autonomy. Add ROS 2 and simulation when they answer an integration question. Use the career map to choose a specialty and the rover or tabletop capstone to build portfolio evidence. Physical operation calls for separate supervised practice.
 
 See [the course review](docs/course-review.md) for version choices and the distinction between locally run checks and expected lab results.
 
 ## Add a note
 
-Create a Markdown file under `site/notes/`. Set `title`, `topic`, a short `description`, and an unused quoted `order` (for example, `"05"`) in its front matter. Use `prerequisites` and `minutes` for chapter metadata. The index groups chapters using `site/_data/tracks.json`; use an existing topic or add it to a track.
+Create a Markdown file under `site/notes/`. Set `title`, `topic`, a short `description`, and an unused quoted three-digit `order` in its front matter. Use `prerequisites` and `minutes` for chapter metadata. The index groups chapters using `site/_data/tracks.json`; use an existing topic or add it to a part.
 
 Start with a problem and an observable outcome. Explain the mechanics with a diagram or concrete trace, then walk through a small build and change one input intentionally. Label expected, illustrative, and measured results distinctly. Close with a transfer exercise and a concise summary. Put solutions in `<details>` blocks. Level-two headings appear in the lecture outline; link to other notes using paths like `/notes/coordinate-frames/`.
 

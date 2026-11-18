@@ -1,7 +1,7 @@
 ---
 title: Evaluate an imitation policy
 topic: LeRobot
-order: "33"
+order: "094"
 description: Verify the data contract and measure closed-loop behavior across reproducible simulator resets.
 prerequisites: An ACT checkpoint and the PushT environment
 minutes: 45

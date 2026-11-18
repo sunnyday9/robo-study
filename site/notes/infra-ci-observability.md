@@ -1,7 +1,7 @@
 ---
 title: Test robotics software and diagnose failures
 topic: Infrastructure
-order: "43"
+order: "103"
 description: Give each CI job a clear claim and collect evidence that locates failures across replay, simulation, and evaluation.
 prerequisites: Know how ROS replay and container inputs are scoped
 minutes: 50

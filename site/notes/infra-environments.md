@@ -1,7 +1,7 @@
 ---
 title: Choose a robotics development environment
 topic: Infrastructure
-order: "40"
+order: "100"
 description: Match ROS 2, Isaac Sim, and LeRobot to a host and record the versions each one actually uses.
 prerequisites: Comfortable with Python and basic shell commands
 minutes: 45

@@ -1,7 +1,7 @@
 ---
 title: Read simulated sensors through the ROS 2 bridge
 topic: Isaac Sim
-order: "22"
+order: "083"
 description: Bring up a ROS 2 bridge and use clock, frame, and delivery checks to explain missing or slow sensor data.
 prerequisites: Isaac Sim 6.1.0 on Ubuntu 24.04 and basic ROS 2 topics
 minutes: 50

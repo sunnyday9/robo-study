@@ -1,7 +1,7 @@
 ---
 title: "Capstone: from tabletop replay to imitation"
 topic: Capstone
-order: "50"
+order: "131"
 description: Produce an auditable pick-and-place experiment without assuming the simulator, middleware, and learning stack share a data format.
 prerequisites: The ROS 2 replay, Isaac Sim scene, and LeRobot dataset chapters. The first gate runs on Python alone.
 minutes: 150

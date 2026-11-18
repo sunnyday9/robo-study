@@ -1,7 +1,7 @@
 ---
 title: Collect and check demonstrations
 topic: LeRobot
-order: "31"
+order: "092"
 description: Write a small simulated dataset and verify what each saved frame means.
 prerequisites: Episode structure and basic Python
 minutes: 45

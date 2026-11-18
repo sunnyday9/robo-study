@@ -2,6 +2,12 @@
 
 The course assumes Python, data structures, and basic machine learning. It adds the robotics-specific contracts: coordinate frames, units, message time, bounded feedback, environment compatibility, and evaluation under closed-loop dynamics.
 
+## Robotics engineering book
+
+The 45-chapter edition preserves the earlier lecture URLs and organizes them into ten parts. It adds material on beginner robot loops and measurement, kinematics and dynamics, sensing and calibration, estimation and SLAM, navigation and manipulation, C++ and ROS integration, embedded timing and field practice, and career specialization. The tabletop project is joined by a rover capstone with runnable grid and continuous kinematic stages. The grid stage covers five baseline and fault outcomes; the continuous stage demonstrates that passing a goal criterion can conceal poor clearance. The ROS extension, physical commissioning, and higher-fidelity simulator runs still require the appropriate external environments and supervision.
+
+Review basis: execute the new standalone Python examples, compile and run the pure C++ wheel-rate fixture, check both rover implementations, and validate book navigation and internal links. Source-backed reading and expected outcomes do not substitute for ROS, sensor, or hardware acceptance tests.
+
 ## Lecture edition
 
 The [AI Systems Performance Engineering chapter materials](https://se7en.mintlify.app/books/ai-systems-performance-engineering/chapters/ch01) served as a teaching-format reference: explanatory sections, figures that support the argument, and optional details without interrupting the main path. This course uses original robotics examples. Each lecture starts with an engineering problem, explains a concrete mechanism, then asks the learner to build a small baseline, vary one input, and explain the result. Chapter outlines and collapsible solutions support longer sessions without putting answers in the reading path.

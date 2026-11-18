@@ -1,7 +1,7 @@
 ---
 title: Build and inspect a simulated pick-and-place scene
 topic: Isaac Sim
-order: "21"
+order: "082"
 description: Trace a cube handoff from the USD stage through an articulated robot, a feedback controller, and contact physics.
 prerequisites: A working Isaac Sim 6.1.0 workstation and basic coordinate frames
 minutes: 45

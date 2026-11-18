@@ -4,7 +4,7 @@ layout: base.njk
 <div class="lecture-layout">
 <article class="reader lecture">
   {% set notes = collections.notes | sort(attribute="data.order") %}
-  <a class="back" href="/#notes">← Learning path</a>
+  <a class="back" href="/#notes">← Table of contents</a>
   <header class="note-heading">
     <p class="eyebrow">{{ order | escape }} / {{ topic | escape }}</p>
     <h1>{{ title | escape }}</h1>

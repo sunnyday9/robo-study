@@ -1,7 +1,7 @@
 ---
 title: Run repeatable simulation and data experiments
 topic: Isaac Sim
-order: "23"
+order: "084"
 description: Control stepping and capture cadence, then separate perception labels from action demonstrations and evaluate each on its own terms.
 prerequisites: The Franka pick-and-place baseline and basic Python logging
 minutes: 50

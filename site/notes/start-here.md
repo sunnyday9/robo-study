@@ -1,100 +1,82 @@
 ---
-title: "Start here: how the robotics stack fits together"
+title: "Start here: learn to build robots, not just run their tools"
 topic: Orientation
-order: "00"
-description: Pick a CPU-first route, learn the boundaries between the tools, and know what to check before moving to a GPU.
-prerequisites: Python, data structures, and basic machine learning.
+order: "000"
+description: Follow a common robotics core, then choose a role, build projects, and collect evidence of your skills.
+prerequisites: Basic Python. No robotics, GPU, or physical robot required to begin.
 minutes: 25
 ---
 
-## Think in interfaces
+## What makes software robotics?
 
-You already know how to write a Python program and train a model. The new part is that a robot’s inputs have **frames, timestamps, and physical units**, and a control decision has to arrive in time. A model that passes an offline check can still fail if its input comes from the wrong frame or its actions arrive late.
+A robot senses a physical world, infers enough about it to decide, and acts on it. Its actions change what it sees next. A navigation model can be accurate offline and still send a rover into a bad state because its measurement was late, its destination was unreachable, or its motor could not keep up. Robotics is the engineering of that closed loop under physical, computational, and safety constraints.
 
-| Layer | What it owns | What to verify |
-| --- | --- | --- |
-| ROS 2 | A graph of processes exchanging typed messages | Names, types, discovery, QoS, frames and timestamps |
-| Isaac Sim | A simulated world, robot dynamics, and virtual sensors | Asset versions, joint drives, physics/render rates and clock |
-| LeRobot | Demonstration datasets, policy training, and evaluation tools | Episode boundaries, feature order, action semantics, splits and metrics |
-| Infrastructure | The environment that makes the other layers reproducible | OS, drivers, runtimes, networking, storage and run manifests |
-
-Simulation is not the same as learning. **Isaac Sim** is the simulator used in this guide. **Isaac Lab** is a separate framework for constructing robot learning environments; when you need it, check that the Lab version supports the simulation backend and release you choose. **LeRobot** is a learning toolkit: it can collect, train and evaluate, but it still needs a source of observations and actions. The course uses PushT for its versioned LeRobot labs rather than assuming an Isaac bridge is a dataset converter.
-
-## Pick your route
-
-1. **Browser and Python only.** Do the [browser labs](/demos/) and the CPU-only contract check in the [capstone](/notes/capstone-tabletop/). No robot, CUDA, or ROS install is required for these.
-2. **ROS 2 first.** Use [the workspace lab](/notes/ros2-workspaces/) on the Jazzy/Ubuntu 24.04 reference path. Learn to inspect a graph and replay a recording before adding a simulator.
-3. **Add simulation and learning independently.** Follow the [Isaac Sim requirements check](/notes/isaac-environment/) before choosing a GPU host. Start the [LeRobot track](/notes/lerobot-data/) with offline data, then use the versioned environment later for evaluation.
-4. **Combine evidence, not environments.** Use the [infrastructure guide](/notes/infra-environments/) to record the environment of each process. The capstone’s stages can run on different machines, with replay and datasets moving between them as artifacts.
-
-## How to work through a lecture
-
-Start with a prediction. If the experiment changes a coordinate convention, write down where one known point should appear. If it changes a queue, write down which delays or drops you expect. This gives you an observable claim and prevents a troubleshooting session from becoming a series of unexplained configuration changes.
-
-Then work in three passes:
-
-| Pass | What you do | What you keep |
-| --- | --- | --- |
-| Understand | Trace a concrete example by hand and explain the units, time source, and data direction. | A diagram, a calculation, or two written invariants. |
-| Reproduce | Run the smallest relevant development lab unchanged. Compare the result against the stated checkpoint. | Command, version, output, and whether it matched. |
-| Transfer | Change one condition or break one assumption, predict the symptom, and use evidence to diagnose the result. | Prediction, observation, explanation, and corrected result. |
-
-Do not skip the small probe to get to the full demo. A whole pipeline has too many moving parts. If a camera image does not reach a model, a graph probe can distinguish a missing publisher from incompatible QoS. A pinned saved frame can distinguish a decoder problem from live transport. A test that crosses both at once rarely locates the failure.
-
-Keep a development notebook. For each experiment, record the smallest configuration that reproduced it, one observable invariant, and the outcome. Distinguish **expected** from **measured**. If a lecture uses a fixture or illustrative trace, mark it as such. If a runtime is unavailable, note what a future live test would add rather than filling the gap with an assumption.
-
-## Follow one observation from source to decision
+This book starts at zero **robotics** knowledge and assumes basic programming. Familiarity with Python and ML is useful, but you do not need to start by installing ROS or training a model. You will first write a small simulated controller you can explain. Then you will work outward through geometry, physics, sensing, planning, robot software, learning, and field practice.
 
 ```text
-simulate time and contacts
-    └─▶ capture timestamped observation
-            └─▶ publish typed message / transform
-                    └─▶ record raw evidence / export episode
-                            └─▶ normalize + predict action
-                                    └─▶ apply command and measure outcome
+  physical or simulated world
+      │ observation + frame + time
+      ▼
+  sensing → state estimate → plan → feedback → actuator
+      ▲                                          │
+      └────────── world changes as a result ───────┘
+
+  safety limits, clocks, and test evidence cross every boundary
 ```
 
-At the camera boundary, pretend the simulator captures at 1.000 s but the subscriber receives it 40 ms later. At the data boundary, the observation belongs to its acquisition time, not the arrival time. At the inference boundary, even a correctly labelled tensor can be too stale to act on. Inspecting each boundary with the same sample ID is much more useful than averaging all delay into a single system metric.
+There is no single stack called “robotics.” A manipulator commands joints and handles contact. An indoor mobile robot estimates its pose and navigates around obstacles. An embedded engineer may never train a model but needs to know how sensing and actuation behave under deadlines. The shared idea is to specify and test the interfaces that connect these layers.
 
-The pipeline above is a mental model, not an automatic integration. The course deliberately separates the first ROS replay, the Isaac simulated baseline, and the versioned LeRobot experiment. You can verify each part, then attempt an adapter with agreed timing, coordinate frames, feature order, action semantics, and reset boundaries.
-## Plan three development milestones
+## Read the common core, then specialize
 
-**Milestone 1: a reliable replay.** Own a small Python ROS package, a synthetic topic, and a deterministic observation example. Write a probe that can tell apart missing delivery, a missing replay clock, and an invalid transform at a known timestamp. Your acceptance test is a second terminal that can reproduce the result from a clean shell. Reopen the [workspace](/notes/ros2-workspaces/), [frames](/notes/ros2-frames-and-time/), and [replay](/notes/ros2-bags-and-testing/) lectures when that contract breaks.
+| Stage | Study | Evidence you can keep |
+| --- | --- | --- |
+| First steps | [Robot loop](/notes/robot-loop/), [math and measurement](/notes/robot-math-and-measurement/), [frames](/notes/coordinate-frames/) | A Python run, a deliberately broken run, and an explanation of which assumption changed |
+| Foundations | [Motion and control](/#motion), [perception and estimation](/#sensing), [planning and autonomy](/#autonomy) | A known forward/inverse motion case, an estimate from noisy samples, and a checked route |
+| Software integration | [Robot software and ROS 2](/#ros-2), [simulation](/#isaac-sim), [infrastructure](/#infrastructure) | A sourced workspace, stamped replay evidence, version manifest, and a repeatable fail/pass test |
+| Applied engineering | [Robot learning](/#lerobot) or [field engineering](/#field), plus the relevant core | A measured policy comparison, or a timing, commissioning, and verification plan |
+| Portfolio | [Rover project](/notes/capstone-rover/) or [tabletop manipulation](/notes/capstone-tabletop/) | A reproducible demo, test cases, a failure analysis, and a concise handoff |
 
-**Milestone 2: a baseline that moves the block.** Keep the scene, asset references, reset pose, and expected success predicate together. Your acceptance test is a short simulated trial that records whether the cube actually lifts and remains at the target after release. Reaching the gripper's target pose is not enough. First establish this in [the Isaac scene](/notes/isaac-scene/) before comparing sensor behavior through [the bridge](/notes/isaac-ros-bridge/).
+Read across the common core even if you already know what role interests you. Someone implementing a planner needs enough control theory to understand an infeasible trajectory. Someone training a policy needs enough sensor and timing knowledge to catch a corrupted dataset. After the common core, use the [career map](/notes/robotics-career-roadmap/) to choose depth. Do not try to master every specialization in sequence.
 
-**Milestone 3: an evaluation another developer can interpret.** Audit demonstrations and normalize on the training split, then verify that a checkpoint can consume a real batch and make valid actions. Keep the original demonstration convention when evaluating. Run the [LeRobot PushT path](/notes/lerobot-evaluation/) independently of Isaac until an adapter exists. Your acceptance test is a report where someone can distinguish which data, simulator, policy, and test conditions produced each number.
+## Use the same development loop in every part
 
-Each milestone should generate a small artifact before you attempt the next. Reproduce the failure at the earliest stage that owns it. A decoder cannot repair a clock mismatch, and additional demonstrations cannot fix a controller that sends the wrong command units.
+1. **Specify an observable claim.** “At a known joint angle, the tool point is here” is testable. “The robot works” is not.
+2. **Build the smallest baseline.** Use a known point, a synthetic topic, a grid, or a tiny rollout. Remove runtime layers that the current claim does not need.
+3. **Measure at the boundary.** Record frame, units, time source, run configuration, and what you actually saw.
+4. **Break one assumption.** Delay a reading, offset a calibration, remove a transform, or change a deadline. Write down the expected symptom before running it.
+5. **Explain the first divergence.** If replay and simulation disagree, find the earliest difference rather than changing all parameters at once.
 
-## Know when to advance
+Keep a notebook with columns for claim, configuration, expected result, actual result, and next diagnostic. A successful run is useful; showing that a negative control fails for the right reason is more useful. Compare the scope of the evidence with the scope of the conclusion.
 
-Before using a simulator, explain the difference between a ROS message header stamp and the time a subscriber receives the message. Before training, show that observation and action rows refer to the intended step. Before claiming a policy works, compare it with a baseline on held-out closed-loop trials. A passing check at one layer doesn’t prove the next one works.
+## Choose what to install and when
 
-This is a simulation-first course. It does not teach safe physical commissioning; do not send replay or unvalidated policy commands to a physical robot. Treat missing hardware or GPU results as untested, not failed.
+You can begin with [browser labs](/demos/) and Python. The common-core examples do not require a GPU. Use the [environment chapter](/notes/infra-environments/) when installing ROS, a simulator, or an ML toolkit. Do not start by trying to make every tool share a Python environment.
+
+ROS 2 is middleware and tooling. Isaac Sim, Gazebo, and MuJoCo answer different simulation questions. LeRobot is a learning toolkit, not a simulator. [The simulator selection chapter](/notes/choosing-a-simulator/) makes the trade-offs explicit before the Isaac-specific labs. The PushT learning path and Isaac tabletop path are separate unless you build and test an adapter between them.
+
+## What completing this book can and cannot prove
+
+The study path targets a practical working foundation: make a prototype, specify its interfaces, test it, debug it, and explain its limits. Reading alone does not provide hardware experience. A simulation pass does not qualify a physical robot or a safety system. For hardware practice, use a supervised lab with an approved platform, training, a commissioning procedure, and an authorized person responsible for operation. Use the field chapters to prepare questions and artifacts, not as a substitute for that supervision.
+
+To close a section, show a small artifact independently: no hints, no copying expected output, and one new fault case. If you cannot explain why a test fails, revisit the relevant boundary. This is a better signal of preparedness than the number of chapters marked complete.
+
+## Check your study plan
+
+You have a laptop without a supported GPU and three evenings before you can access a ROS machine. What do you do first?
 
 <details>
-<summary>Check your understanding</summary>
-<p>If a camera image appears in ROS 2 but a policy acts on stale data, start by comparing acquisition, receipt, and inference times in their known clock domains. Changing the model or GPU configuration before measuring the delay can hide the real problem.</p>
+<summary>Compare your plan</summary>
+<p>Build and mutate the first Python loop, check a known transform by hand, and run a small planning or estimation example. Bring the expected data contract and failure tests to the ROS machine. Save GPU time for questions that genuinely require simulation rendering or physics.</p>
 </details>
 
-## Transfer exercise: choose the first milestone
-
-You have a Windows laptop with Python but no supported local Isaac GPU. What do you build in week one? What evidence should you produce before renting compute or adding the simulator?
+A developer says they are ready to operate a physical arm because a simulator task completed. What evidence is still missing?
 
 <details>
-<summary>Check the staged plan</summary>
-<p>Start with the browser and Python contract labs. Then use the supported Jazzy CPU path to make a synthetic message stream, observe it, and capture and replay it. Keep a trace and a simple check of frame, timestamps and units. Move only the simulation workload to a supported GPU host when you can say what the bridge should publish and how you will verify it.</p>
+<summary>Check the evidence boundary</summary>
+<p>Hardware calibration, limits, timing, failure and stop behavior, and supervised commissioning remain separate. The simulator result supports only the stated simulated scenario.</p>
 </details>
 
-## What to carry forward
+## References for deeper study
 
-- Treat data interfaces as engineering contracts, not just compatible arrays.
-- Make the first milestone small and observable. Separate environments until you have a reason to connect them.
-- Aim to explain a failure from evidence. A green command alone is not the end of a lecture.
-
-## Official references
-
-- [ROS 2 Jazzy: Ubuntu binary packages](https://github.com/ros2/ros2_documentation/blob/jazzy/source/Installation/Ubuntu-Install-Debs.rst)
-- [Isaac Lab: installation and backend compatibility](https://isaac-sim.github.io/IsaacLab/main/source/isaaclab/installation.html)
-- [LeRobot documentation and supported environments](https://huggingface.co/docs/lerobot/en/index)
+- [Modern Robotics](https://modernrobotics.northwestern.edu/nu-gm-book-resource/) develops motion, forces, planning, and control mathematically.
+- [MIT Underactuated Robotics](https://underactuated.mit.edu/) develops dynamics, estimation, and optimization in greater depth.

@@ -1,7 +1,7 @@
 ---
 title: Design robotics networks and artifact storage
 topic: Infrastructure
-order: "42"
+order: "102"
 description: Diagnose ROS 2 discovery, budget camera traffic, and preserve the files and clocks needed for replay.
 prerequisites: Understand ROS 2 publishers, subscribers, and topic types
 minutes: 50

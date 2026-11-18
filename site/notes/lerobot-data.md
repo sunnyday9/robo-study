@@ -1,7 +1,7 @@
 ---
 title: Read a robot learning dataset
 topic: LeRobot
-order: "30"
+order: "091"
 description: Inspect recorded observations and commands, audit their timing, and split by episode.
 prerequisites: Python and basic supervised learning
 minutes: 35

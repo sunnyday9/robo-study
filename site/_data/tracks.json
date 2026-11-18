@@ -2,43 +2,71 @@
   {
     "id": "foundations",
     "number": "01",
-    "title": "Robotics foundations",
-    "topics": ["Orientation", "Kinematics", "Control", "Perception"],
-    "outcome": "Read a pose, compute a feedback update, and project a point into a camera image."
+    "title": "Start from zero robotics",
+    "topics": ["Orientation", "Robotics fundamentals", "Kinematics"],
+    "outcome": "Build a tiny robot loop in Python, then reason about units, frames, sampling, and the assumptions in a model."
+  },
+  {
+    "id": "motion",
+    "number": "02",
+    "title": "Motion and control",
+    "topics": ["Motion and control", "Control"],
+    "outcome": "Model a robot's motion, handle limits and singularities, and design feedback and trajectories."
+  },
+  {
+    "id": "sensing",
+    "number": "03",
+    "title": "Perception and estimation",
+    "topics": ["Perception and estimation", "Perception"],
+    "outcome": "Calibrate measurements, estimate a robot's state, and distinguish localization, mapping, and SLAM."
+  },
+  {
+    "id": "autonomy",
+    "number": "04",
+    "title": "Planning and autonomy",
+    "topics": ["Planning and autonomy"],
+    "outcome": "Plan and verify mobile navigation and manipulation, then design what the robot does when a plan fails."
   },
   {
     "id": "ros-2",
-    "number": "02",
-    "title": "ROS 2",
+    "number": "05",
+    "title": "Robot software and ROS 2",
     "topics": ["ROS 2"],
-    "outcome": "Build a Python workspace, inspect the node graph, and replay a time-aligned trace."
+    "outcome": "Build a ROS 2 workspace, design interfaces, and test delivery, transforms, and replay."
   },
   {
     "id": "isaac-sim",
-    "number": "03",
-    "title": "Isaac Sim",
-    "topics": ["Isaac Sim"],
-    "outcome": "Create a simulated tabletop scene and verify its ROS 2 bridge and timing."
+    "number": "06",
+    "title": "Simulation and digital experiments",
+    "topics": ["Simulation", "Isaac Sim"],
+    "outcome": "Choose a simulator for the question, run a controlled experiment, and connect a virtual sensor to ROS 2."
   },
   {
     "id": "lerobot",
-    "number": "04",
-    "title": "LeRobot",
-    "topics": ["LeRobot"],
-    "outcome": "Audit demonstration data, train a baseline, and distinguish offline fit from rollout success."
+    "number": "07",
+    "title": "Robot learning",
+    "topics": ["Robot learning", "LeRobot"],
+    "outcome": "Compare classical and learned policies, audit demonstrations, and measure performance in closed loop."
   },
   {
     "id": "infrastructure",
-    "number": "05",
-    "title": "Infrastructure",
+    "number": "08",
+    "title": "Infrastructure and operations",
     "topics": ["Infrastructure"],
-    "outcome": "Pin environments, debug GPU and DDS boundaries, and preserve reproducible experiment artifacts."
+    "outcome": "Pin environments, diagnose GPU and DDS boundaries, size storage, and automate reproducible tests."
+  },
+  {
+    "id": "field",
+    "number": "09",
+    "title": "Hardware, real time, and field engineering",
+    "topics": ["Field engineering"],
+    "outcome": "Understand the embedded stack, reason about deadlines, and design a safe commissioning and verification plan."
   },
   {
     "id": "capstone",
-    "number": "06",
-    "title": "Capstone",
-    "topics": ["Capstone"],
-    "outcome": "Connect sensing, simulation, and learning with explicit data and evaluation contracts."
+    "number": "10",
+    "title": "Projects and professional practice",
+    "topics": ["Capstone", "Professional practice"],
+    "outcome": "Build a rover and a tabletop workflow, then turn your tests, traces, and design decisions into portfolio evidence."
   }
 ]

@@ -1,7 +1,7 @@
 ---
 title: "Choose and debug ROS 2 communication"
 topic: "ROS 2"
-order: "11"
+order: "062"
 description: "Choose topics, services, or actions and diagnose why discovered endpoints fail to exchange data."
 prerequisites: "A working Jazzy workspace and the heartbeat lab."
 minutes: 35

@@ -1,7 +1,7 @@
 ---
 title: ROS 2 nodes and topics
 topic: ROS 2
-order: "04"
+order: "060"
 description: Trace a stream of typed messages from a publisher to its subscribers.
 prerequisites: "For the lab: a sourced ROS 2 Jazzy shell. Read the design sections without ROS."
 minutes: 40

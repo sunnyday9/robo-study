@@ -1,16 +1,16 @@
 ---
 layout: base.njk
-description: A hands-on robotics course for Python and ML developers, covering ROS 2, Isaac Sim, LeRobot, and robotics infrastructure.
+description: A robotics engineering textbook for software developers, from first principles to simulated projects and field engineering.
 ---
 {% set notes = collections.notes | sort(attribute="data.order") %}
 <section class="hero" aria-labelledby="intro">
   <div class="hero-copy">
     <p class="eyebrow"><span class="signal"></span> THE ROBOTICS NOTEBOOK</p>
-    <h1 id="intro">Robotics for software engineers.</h1>
-    <p>Bring your Python and ML background. Work through the engineering decisions, implementation steps, and failure cases behind a robotics system.</p>
+    <h1 id="intro">Robotics from first principles.</h1>
+    <p>No robotics background required. Start with a Python robot loop, then work through motion, sensing, autonomy, deployment, and the practice of building reliable robots.</p>
     <div class="hero-actions">
       <a class="button" href="/notes/start-here/">Start here <span aria-hidden="true">↗</span></a>
-      <a href="/demos/">Try the browser labs</a>
+      <a href="/notes/robotics-career-roadmap/">Explore career paths</a>
     </div>
   </div>
   <figure class="diagram">
@@ -21,12 +21,12 @@ description: A hands-on robotics course for Python and ML developers, covering R
 <section class="library" id="notes" aria-labelledby="library-title">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">STUDY INDEX / {{ notes | length }} CHAPTERS</p>
-      <h2 id="library-title">Learning path</h2>
+      <p class="eyebrow">BOOK INDEX / {{ notes | length }} CHAPTERS</p>
+      <h2 id="library-title">Table of contents</h2>
     </div>
-    <p>Start with the browser labs if you don’t have a robotics workstation yet.</p>
+    <p>Read the common core, then choose a role and build a project.</p>
   </div>
-  <nav class="track-nav" aria-label="Course tracks">
+  <nav class="track-nav" aria-label="Book parts">
     {% for track in tracks %}
     <a href="#{{ track.id }}">{{ track.title }}</a>
     {% endfor %}
@@ -34,7 +34,7 @@ description: A hands-on robotics course for Python and ML developers, covering R
   {% for track in tracks %}
   <section class="track" id="{{ track.id }}" aria-labelledby="{{ track.id }}-title">
     <header>
-      <p class="eyebrow">TRACK {{ track.number }}</p>
+      <p class="eyebrow">PART {{ track.number }}</p>
       <h3 id="{{ track.id }}-title">{{ track.title }}</h3>
       <p>{{ track.outcome }}</p>
     </header>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 390" role="img" aria-labelledby="title description">
+  <title id="title">Before and after replanning around a blocked corridor</title>
+  <desc id="description">The rover starts at the left of a vertical wall. It initially plans a direct route through the opening. After the opening closes, it turns down from the second waypoint, crosses at the bottom, then comes back to the goal.</desc>
+  <rect width="640" height="390" rx="14" fill="#edf2e7"/>
+  <g font-family="system-ui, sans-serif" fill="#132f26">
+    <text x="40" y="40" font-size="23" font-weight="700">A map update changes the next command</text>
+    <text x="40" y="72" font-size="15">Grid representation: row index increases downward.</text>
+  </g>
+  <g transform="translate(49 93)">
+    <path d="M0 0H400V240H0ZM50 0v240m50-240v240m50-240v240m50-240v240m50-240v240m50-240v240m50-240v240M0 40h400m-400 40h400m-400 40h400m-400 40h400m-400 40h400" stroke="#90a69a" fill="#fafff8"/>
+    <path d="M150 0h50v80h-50zm0 120h50v80h-50z" fill="#546c5e"/>
+    <path d="M150 80h50v40h-50z" fill="#f2c4af" stroke="#923d24"/>
+    <path d="M125 100h250" stroke="#953f26" stroke-width="3" stroke-dasharray="8 6"/>
+    <path d="M25 100h100v120h250v-120" stroke="#197055" stroke-width="4" fill="none"/>
+    <g fill="#197055">
+      <circle cx="25" cy="100" r="6"/><circle cx="125" cy="100" r="6"/><circle cx="375" cy="100" r="6"/>
+    </g>
+    <g font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#132f26" text-anchor="middle">
+      <text x="25" y="87">START</text><text x="125" y="87">TICK 2</text><text x="375" y="87">GOAL</text>
+    </g>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="14" fill="#132f26">
+    <path d="M470 126h34" stroke="#197055" stroke-width="4"/><text x="514" y="131">Detour</text>
+    <path d="M470 157h34" stroke="#953f26" stroke-width="3" stroke-dasharray="8 6"/><text x="514" y="162">Old route</text>
+    <rect x="470" y="177" width="32" height="19" fill="#f2c4af" stroke="#923d24"/><text x="514" y="192">Closed cell</text>
+    <text x="49" y="360">At (2, 2), the rover goes to (2, 3), not into the closed cell.</text>
+  </g>
+</svg>

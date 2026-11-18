@@ -1,7 +1,7 @@
 ---
 title: PID feedback
 topic: Control
-order: "02"
+order: "032"
 description: Compute a discrete controller update and see why actuator limits matter.
 prerequisites: Python and basic algebra. All control experiments are simulated.
 minutes: 55

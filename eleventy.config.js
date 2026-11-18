@@ -6,7 +6,7 @@ export default function (eleventyConfig) {
     selector: "h2,h3",
     filter: ({ page }) => page.inputPath.startsWith("./site/notes/"),
   });
-  eleventyConfig.addPassthroughCopy({ "site/assets": "assets" });
+  eleventyConfig.addPassthroughCopy("site/assets/**/*.{css,js,svg,py,csv,cpp}");
 }
 
 export const config = {

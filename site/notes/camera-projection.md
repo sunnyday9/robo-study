@@ -1,7 +1,7 @@
 ---
 title: Pinhole camera projection
 topic: Perception
-order: "03"
+order: "040"
 description: Turn a point in the camera frame into a pixel and understand what depth information is lost.
 prerequisites: Coordinate frames and basic algebra. The lab uses standard Python.
 minutes: 40

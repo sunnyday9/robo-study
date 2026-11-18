@@ -1,7 +1,7 @@
 ---
 title: "Replay ROS 2 bags and test the graph"
 topic: "ROS 2"
-order: "13"
+order: "064"
 description: "Capture a replay fixture, pin launch parameters, and isolate discovery, time, and application failures."
 prerequisites: "The Jazzy heartbeat lab, QoS, and ROS time."
 minutes: 45

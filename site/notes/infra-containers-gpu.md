@@ -1,7 +1,7 @@
 ---
 title: Reproduce GPU workloads with containers
 topic: Infrastructure
-order: "41"
+order: "101"
 description: Pin an OCI image, check GPU access layer by layer, and run a headless simulator with observable inputs and outputs.
 prerequisites: Know which host runs each tool from the environment chapter
 minutes: 50

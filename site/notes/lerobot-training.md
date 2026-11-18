@@ -1,7 +1,7 @@
 ---
 title: Train an imitation policy
 topic: LeRobot
-order: "32"
+order: "093"
 description: Compare ACT and Diffusion Policy, train an ACT checkpoint, and inspect its processors.
 prerequisites: Episode splits, PyTorch basics, and the recording lab setup
 minutes: 55
