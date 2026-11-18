@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="title desc">
+  <title id="title">Physics, rendering, control, and camera cadence</title>
+  <desc id="desc">Across eight physics intervals, rendering occurs every two ticks, control commands update every four ticks and are held between updates, and the camera captures every eight ticks.</desc>
+  <rect x="1" y="1" width="898" height="338" rx="18" fill="#f5f8fc" stroke="#b9ccdf" stroke-width="2"/>
+  <g font-family="system-ui, sans-serif" fill="#142a45">
+    <text x="30" y="44" font-size="24" font-weight="700">One simulation clock, four schedules</text>
+    <text x="30" y="80" font-size="16">Simulated time (ms)</text>
+    <g text-anchor="middle" font-size="15" fill="#324962">
+      <text x="290" y="80">0</text>
+      <text x="430" y="80">16.7</text>
+      <text x="570" y="80">33.3</text>
+      <text x="710" y="80">50.0</text>
+      <text x="850" y="80">66.7</text>
+    </g>
+    <g font-size="19" font-weight="600">
+      <text x="30" y="124">Physics · 120 Hz</text>
+      <text x="30" y="176">Render · 60 Hz</text>
+      <text x="30" y="228">Control · 30 Hz</text>
+      <text x="30" y="280">Camera · 15 Hz</text>
+    </g>
+    <text x="30" y="315" font-size="15" fill="#324962">Illustrative schedule with capture aligned to a render.</text>
+  </g>
+  <path d="M290 92v201 M360 92v201 M430 92v201 M500 92v201 M570 92v201 M640 92v201 M710 92v201 M780 92v201 M850 92v201" fill="none" stroke="#c8d6e6" stroke-dasharray="4 4"/>
+  <path d="M290 118h560 M290 170h560 M290 222h560 M290 274h560" fill="none" stroke="#9eb4cb"/>
+  <g fill="#2261a6">
+    <circle cx="290" cy="118" r="6"/>
+    <circle cx="360" cy="118" r="6"/>
+    <circle cx="430" cy="118" r="6"/>
+    <circle cx="500" cy="118" r="6"/>
+    <circle cx="570" cy="118" r="6"/>
+    <circle cx="640" cy="118" r="6"/>
+    <circle cx="710" cy="118" r="6"/>
+    <circle cx="780" cy="118" r="6"/>
+    <circle cx="850" cy="118" r="6"/>
+  </g>
+  <g fill="#096d70">
+    <rect x="283" y="163" width="14" height="14" rx="2"/>
+    <rect x="423" y="163" width="14" height="14" rx="2"/>
+    <rect x="563" y="163" width="14" height="14" rx="2"/>
+    <rect x="703" y="163" width="14" height="14" rx="2"/>
+    <rect x="843" y="163" width="14" height="14" rx="2"/>
+  </g>
+  <g fill="#944600">
+    <path d="M290 213l8 15h-16z M570 213l8 15h-16z M850 213l8 15h-16z"/>
+    <path d="M303 222h253 M583 222h253" fill="none" stroke="#944600" stroke-width="2"/>
+    <path d="M549 217l8 5-8 5 M829 217l8 5-8 5" fill="none" stroke="#944600" stroke-width="2"/>
+    <g font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+      <text x="430" y="212">hold action 0</text>
+      <text x="710" y="212">hold action 1</text>
+    </g>
+  </g>
+  <path d="M290 264l10 10-10 10-10-10z M850 264l10 10-10 10-10-10z" fill="#6e438d"/>
+</svg>

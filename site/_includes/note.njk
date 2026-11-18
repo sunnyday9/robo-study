@@ -1,0 +1,26 @@
+---
+layout: base.njk
+---
+<article class="reader">
+  {% set notes = collections.notes | sort(attribute="data.order") %}
+  <a class="back" href="/#notes">← Learning path</a>
+  <header class="note-heading">
+    <p class="eyebrow">{{ order | escape }} / {{ topic | escape }}</p>
+    <h1>{{ title | escape }}</h1>
+    <p>{{ description | escape }}</p>
+  </header>
+  {% if prerequisites or minutes %}
+  <dl class="note-meta">
+    {% if prerequisites %}<div><dt>Before you start</dt><dd>{{ prerequisites | escape }}</dd></div>{% endif %}
+    {% if minutes %}<div><dt>Study time</dt><dd>{{ minutes }} min</dd></div>{% endif %}
+  </dl>
+  {% endif %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  {% for note in notes %}
+    {% if note.url == page.url and not loop.last %}
+      <nav class="next-note" aria-label="Continue learning"><a href="{{ notes[loop.index].url }}">Next chapter: {{ notes[loop.index].data.title | escape }} →</a></nav>
+    {% endif %}
+  {% endfor %}
+</article>

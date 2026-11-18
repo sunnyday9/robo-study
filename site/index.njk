@@ -1,0 +1,56 @@
+---
+layout: base.njk
+description: A hands-on robotics course for Python and ML developers, covering ROS 2, Isaac Sim, LeRobot, and robotics infrastructure.
+---
+{% set notes = collections.notes | sort(attribute="data.order") %}
+<section class="hero" aria-labelledby="intro">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="signal"></span> THE ROBOTICS NOTEBOOK</p>
+    <h1 id="intro">Robotics for software engineers.</h1>
+    <p>Bring your Python and ML background. Learn frames and timing, build a ROS 2 graph, simulate a robot, and evaluate an imitation policy.</p>
+    <div class="hero-actions">
+      <a class="button" href="/notes/start-here/">Start here <span aria-hidden="true">↗</span></a>
+      <a href="/demos/">Try the browser labs</a>
+    </div>
+  </div>
+  <figure class="diagram">
+    <img src="/assets/arm.svg" width="560" height="342" alt="Schematic of a two-joint arm with a base coordinate frame and an end-effector coordinate frame.">
+    <figcaption><span>FIG. 01</span> PLANAR ARM / FRAME SKETCH</figcaption>
+  </figure>
+</section>
+<section class="library" id="notes" aria-labelledby="library-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">STUDY INDEX / {{ notes | length }} CHAPTERS</p>
+      <h2 id="library-title">Learning path</h2>
+    </div>
+    <p>Start with the browser labs if you don’t have a robotics workstation yet.</p>
+  </div>
+  <nav class="track-nav" aria-label="Course tracks">
+    {% for track in tracks %}
+    <a href="#{{ track.id }}">{{ track.title }}</a>
+    {% endfor %}
+  </nav>
+  {% for track in tracks %}
+  <section class="track" id="{{ track.id }}" aria-labelledby="{{ track.id }}-title">
+    <header>
+      <p class="eyebrow">TRACK {{ track.number }}</p>
+      <h3 id="{{ track.id }}-title">{{ track.title }}</h3>
+      <p>{{ track.outcome }}</p>
+    </header>
+    <ol class="note-grid">
+      {% for note in notes %}
+      {% if note.data.topic in track.topics %}
+      <li>
+        <a class="card" href="{{ note.url }}">
+          <span class="card-top"><span class="eyebrow">{{ note.data.order | escape }}{% if note.data.minutes %} / {{ note.data.minutes }} MIN{% endif %}</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+          <h4>{{ note.data.title | escape }}</h4>
+          <p>{{ note.data.description | escape }}</p>
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+</section>

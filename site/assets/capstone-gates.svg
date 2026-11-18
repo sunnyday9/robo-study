@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220">
+  <rect width="680" height="220" rx="12" fill="#edf2e7"/>
+  <g fill="#164235" font-family="monospace" font-size="18">
+    <text x="26" y="42">CAPSTONE / EVIDENCE AT EACH GATE</text>
+    <text x="48" y="107">1 · Replay</text>
+    <text x="252" y="107">2 · Simulate</text>
+    <text x="466" y="107">3 · Evaluate</text>
+  </g>
+  <g fill="none" stroke="#22694d" stroke-width="2">
+    <rect x="26" y="72" width="176" height="113" rx="8"/>
+    <rect x="230" y="72" width="188" height="113" rx="8"/>
+    <rect x="445" y="72" width="209" height="113" rx="8"/>
+    <path d="M202 128h25l-7-5m7 5-7 5m198-5h24l-7-5m7 5-7 5"/>
+  </g>
+  <g fill="#315849" font-family="system-ui, sans-serif" font-size="16">
+    <text x="48" y="139">Clock + TF</text><text x="48" y="164">aligned trace</text>
+    <text x="252" y="139">Scripted baseline</text><text x="252" y="164">versioned trials</text>
+    <text x="466" y="139">Held-out data</text><text x="466" y="164">offline vs rollout</text>
+  </g>
+</svg>

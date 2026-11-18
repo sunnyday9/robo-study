@@ -1,0 +1,44 @@
+[
+  {
+    "id": "foundations",
+    "number": "01",
+    "title": "Robotics foundations",
+    "topics": ["Orientation", "Kinematics", "Control", "Perception"],
+    "outcome": "Read a pose, compute a feedback update, and project a point into a camera image."
+  },
+  {
+    "id": "ros-2",
+    "number": "02",
+    "title": "ROS 2",
+    "topics": ["ROS 2"],
+    "outcome": "Build a Python workspace, inspect the node graph, and replay a time-aligned trace."
+  },
+  {
+    "id": "isaac-sim",
+    "number": "03",
+    "title": "Isaac Sim",
+    "topics": ["Isaac Sim"],
+    "outcome": "Create a simulated tabletop scene and verify its ROS 2 bridge and timing."
+  },
+  {
+    "id": "lerobot",
+    "number": "04",
+    "title": "LeRobot",
+    "topics": ["LeRobot"],
+    "outcome": "Audit demonstration data, train a baseline, and distinguish offline fit from rollout success."
+  },
+  {
+    "id": "infrastructure",
+    "number": "05",
+    "title": "Infrastructure",
+    "topics": ["Infrastructure"],
+    "outcome": "Pin environments, debug GPU and DDS boundaries, and preserve reproducible experiment artifacts."
+  },
+  {
+    "id": "capstone",
+    "number": "06",
+    "title": "Capstone",
+    "topics": ["Capstone"],
+    "outcome": "Connect sensing, simulation, and learning with explicit data and evaluation contracts."
+  }
+]

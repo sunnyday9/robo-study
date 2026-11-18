@@ -1,0 +1,23 @@
+# Course review
+
+The course assumes Python, data structures, and basic machine learning. It adds the robotics-specific contracts: coordinate frames, units, message time, bounded feedback, environment compatibility, and evaluation under closed-loop dynamics.
+
+## Review decisions
+
+| Area | What was reconciled |
+| --- | --- |
+| Environment | Ubuntu 24.04 and ROS 2 Jazzy are the ROS lab baseline. Isaac Sim 6.1.0 and LeRobot v0.4.3 are explicit teaching releases, not a claimed latest or jointly qualified stack. ROS, Isaac Sim, and LeRobot use separate runtimes. |
+| Time and replay | The heartbeat exercise proves delivery, not timestamped geometry. The capstone adds a synthetic TF and stamped-pose bag fixture, with one replay clock and a checker that uses header stamps. |
+| Simulation and learning | The packaged Franka example supplies the Isaac Sim baseline. PushT supplies an independent LeRobot evaluation path. Isaac-to-LeRobot export requires a supported integration or a checked adapter; none is bundled. |
+| Evaluation | Keep episode groups intact, fit normalization only on training data for held-out tests, and report offline action error separately from closed-loop task success. |
+| Infrastructure | The examples distinguish local discovery from network security, GPU visibility from rendering, and CPU checks from GPU qualification. |
+
+Technical references are cited next to the steps they support, including [ROS bag playback source](https://raw.githubusercontent.com/ros2/rosbag2/jazzy/ros2bag/ros2bag/verb/play.py), [Isaac Sim 6.1.0 bridge setup](https://docs.isaacsim.omniverse.nvidia.com/6.1.0/installation/install_ros.html), and [LeRobot v0.4.3 training source](https://github.com/huggingface/lerobot/blob/v0.4.3/src/lerobot/scripts/lerobot_train.py).
+
+## Verification boundary
+
+- Built the static course at the root and under the GitHub Pages project prefix; checked the 22-chapter index, sequence, exercise disclosures, assets, and local links.
+- Verified that all three browser lab inputs update their outputs. Ran the Python trace validator against a passing fixture and a failing skew budget.
+- Checked the robotics command examples against versioned upstream documentation or source and parsed the downloadable scripts. The LeRobot author ran the published PushT shard audit (206 episodes and 25,650 rows) and wrote and reopened two simulated episodes (40 frames). The ACT CLI accepted its arguments and began downloading data, but no checkpoint was produced.
+- ROS integration, Isaac Sim/RTX, ACT training to completion, and closed-loop policy evaluation were not verified. Treat their expected results as learner checkpoints, not measured results.
+- The site has no production npm dependencies. Full npm audit flagged the build-time `picomatch` chain; the current installed version was the latest published when checked. The static output does not include that dependency. Keep the generator and preview server on trusted local or CI inputs, and recheck before upgrading.

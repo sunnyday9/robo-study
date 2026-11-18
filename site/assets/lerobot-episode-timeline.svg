@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title description">
+  <title id="title">PushT episode timing and split boundaries</title>
+  <desc id="description">Rows in both episodes pair an observation with the command chosen from it. The command changes the next observation. The clock resets at the start of the held-out episode.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#205769"/>
+    </marker>
+  </defs>
+  <rect width="760" height="300" rx="16" fill="#f8fafc"/>
+  <rect x="20" y="20" width="350" height="208" rx="12" fill="#e6f4f2" stroke="#6aaba3"/>
+  <rect x="390" y="20" width="350" height="208" rx="12" fill="#fff0dc" stroke="#ce9c5d"/>
+  <g font-family="system-ui, sans-serif" fill="#182d39">
+    <g font-size="21" font-weight="700">
+      <text x="40" y="56">Episode 0 · training</text>
+      <text x="410" y="56">Episode 186 · holdout</text>
+    </g>
+    <g font-size="15" font-weight="600">
+      <text x="40" y="91">Time (s)</text>
+      <text x="119" y="91">Observation</text>
+      <text x="252" y="91">Command</text>
+      <text x="410" y="91">Time (s)</text>
+      <text x="489" y="91">Observation</text>
+      <text x="622" y="91">Command</text>
+    </g>
+    <g font-family="monospace" font-size="18">
+      <text x="44" y="136">0.0</text>
+      <text x="44" y="194">0.1</text>
+      <text x="414" y="136">0.0</text>
+      <text x="414" y="194">0.1</text>
+      <text x="149" y="136">o₀</text>
+      <text x="273" y="136">a₀</text>
+      <text x="149" y="194">o₁</text>
+      <text x="273" y="194">a₁</text>
+      <text x="519" y="136">o₀</text>
+      <text x="643" y="136">a₀</text>
+      <text x="519" y="194">o₁</text>
+      <text x="643" y="194">a₁</text>
+    </g>
+    <g fill="none" stroke="#205769" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M182 130 H260"/>
+      <path d="M182 188 H260"/>
+      <path d="M286 144 V160 H158 V172"/>
+      <path d="M552 130 H630"/>
+      <path d="M552 188 H630"/>
+      <path d="M656 144 V160 H528 V172"/>
+    </g>
+    <text x="380" y="258" text-anchor="middle" font-size="17">Each command advances the environment by one tick.</text>
+    <text x="380" y="281" text-anchor="middle" font-size="17">Reset starts a new clock and a new action window.</text>
+  </g>
+</svg>

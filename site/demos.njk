@@ -1,0 +1,95 @@
+---
+layout: base.njk
+title: Browser labs
+description: Interactive experiments in coordinate frames, sensor timing, and dataset alignment.
+permalink: /demos/
+---
+<article class="reader labs">
+  <a class="back" href="/#notes">← Learning path</a>
+  <header class="note-heading">
+    <p class="eyebrow">NO INSTALLATION REQUIRED</p>
+    <h1>Browser labs</h1>
+    <p>These small models let you isolate one variable at a time. They do not run ROS 2, Isaac Sim, or LeRobot.</p>
+  </header>
+  <noscript><p>Enable JavaScript to change the inputs. The diagrams show the default cases.</p></noscript>
+
+  <section class="lab" aria-labelledby="frame-title" id="frame-lab">
+    <p class="eyebrow">01 / POSITION</p>
+    <h2 id="frame-title">Change coordinates without moving the base</h2>
+    <p>A point is fixed one meter along the sensor’s local x-axis. The sensor origin sits at (2, 1) m in the base frame. Turn the sensor and predict where its point lands in base coordinates.</p>
+    <label for="frame-angle">Sensor angle (degrees counterclockwise)</label>
+    <input id="frame-angle" type="range" min="-180" max="180" step="15" value="90">
+    <svg class="lab-plot" viewBox="0 0 480 270" role="img" aria-labelledby="frame-plot-title">
+      <title id="frame-plot-title">Base axes, sensor axes, and the transformed point</title>
+      <path class="lab-grid" d="M80 60H410M80 110H410M80 160H410M130 30V210M180 30V210M230 30V210M280 30V210M330 30V210M380 30V210"/>
+      <path class="lab-axis" d="M130 30V210H410"/>
+      <g fill="currentColor" font-size="15">
+        <text x="410" y="231">x base</text>
+        <text x="70" y="37">y base</text>
+        <text x="120" y="234">0</text>
+        <text x="173" y="234">1</text>
+        <text x="224" y="234">2</text>
+        <text x="274" y="234">3</text>
+        <text x="107" y="165">1</text>
+        <text x="107" y="115">2</text>
+      </g>
+      <g transform="translate(230 160)">
+        <g id="sensor-axes" transform="rotate(-90)">
+          <path class="sensor-axis" d="M0 0H50M0 0V-35"/>
+          <path class="sensor-axis" d="m-5-27 5-8 5 8"/>
+          <circle cx="50" cy="0" r="6" fill="#9a4424"/>
+        </g>
+        <circle r="5" fill="#22694d"/>
+        <text x="10" y="21" fill="currentColor" font-size="15">sensor origin</text>
+      </g>
+    </svg>
+    <output id="frame-result" for="frame-angle">90° → point in base: (2.00, 2.00) m</output>
+    <p class="lab-caption">The orange dot is the sensor-local point and lies on its positive x-axis. <a href="/notes/coordinate-frames/">Read about coordinate frames</a>.</p>
+  </section>
+
+  <section class="lab" aria-labelledby="clock-title" id="clock-lab">
+    <p class="eyebrow">02 / TIME</p>
+    <h2 id="clock-title">See when a transform is usable</h2>
+    <p>A simulated camera stamps its image at 1,000 ms. TF samples arrive in the buffer at 900 ms and at a time you choose. Can you transform the image at the time it was acquired?</p>
+    <label for="tf-time">Newest transform stamp (ms)</label>
+    <input id="tf-time" type="range" min="900" max="1100" step="10" value="970">
+    <svg class="lab-plot" viewBox="0 0 480 170" role="img" aria-labelledby="clock-plot-title">
+      <title id="clock-plot-title">Timeline with a camera stamp at 1,000 ms and two transform samples</title>
+      <path class="lab-axis" d="M55 115H425"/>
+      <path class="lab-grid" d="M60 105v22m90-22v22m90-22v22m90-22v22m90-22v22"/>
+      <g fill="currentColor" font-size="15" text-anchor="middle">
+        <text x="60" y="150">900</text><text x="150" y="150">950</text><text x="240" y="150">1,000</text><text x="330" y="150">1,050</text><text x="420" y="150">1,100 ms</text>
+        <text x="240" y="29">Camera stamp</text>
+        <text x="60" y="84">Older TF</text>
+        <text id="tf-marker-label" x="186" y="61">Newest TF</text>
+      </g>
+      <path d="M240 39v76" stroke="#9a4424" stroke-width="2" stroke-dasharray="4 3"/>
+      <circle cx="60" cy="115" r="6" fill="#22694d"/>
+      <circle id="tf-marker" cx="186" cy="115" r="6" fill="#22694d"/>
+    </svg>
+    <output id="tf-result" for="tf-time">970 ms → the requested time is newer than this buffer.</output>
+    <p class="lab-caption">Assumes the same simulation clock, a single dynamic transform, and no other samples. A full TF chain needs valid data on every edge. <a href="/notes/ros2-frames-and-time/">Read about frames and time</a>.</p>
+  </section>
+
+  <section class="lab" aria-labelledby="alignment-title" id="alignment-lab">
+    <p class="eyebrow">03 / DEMONSTRATIONS</p>
+    <h2 id="alignment-title">Spot a one-frame alignment bug</h2>
+    <p>A scripted policy gripped at frame 3. If an exporter pairs each observation with an action from another row, an imitation learner can get the wrong label even though each file is valid.</p>
+    <label for="action-offset">Use the action from</label>
+    <select id="action-offset">
+      <option value="-1">Previous row (−1)</option>
+      <option value="0" selected>Same row (0)</option>
+      <option value="1">Next row (+1)</option>
+    </select>
+    <div class="alignment" role="group" aria-label="Action labels paired with observation frames">
+      <div><strong>Frame 1</strong><span data-action>Approach</span></div>
+      <div><strong>Frame 2</strong><span data-action>Approach</span></div>
+      <div><strong>Frame 3</strong><span data-action>Grip</span></div>
+      <div><strong>Frame 4</strong><span data-action>Lift</span></div>
+      <div><strong>Frame 5</strong><span data-action>Lift</span></div>
+    </div>
+    <output id="alignment-result" for="action-offset">The grip label is paired with frame 3.</output>
+    <p class="lab-caption">Out-of-range rows are marked missing; an episode boundary is never crossed. Same-row pairing applies only to this example’s pre-action observations. <a href="/notes/lerobot-data/">Read about demonstration datasets</a>.</p>
+  </section>
+</article>
+<script src="/assets/demos.js" defer></script>

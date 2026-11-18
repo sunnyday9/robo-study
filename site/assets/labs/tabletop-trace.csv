@@ -1,0 +1,7 @@
+episode,frame,obs_ns,command_ns,gripper
+reset-a,0,0,1000000,open
+reset-a,1,50000000,52000000,close
+reset-a,2,100000000,101000000,hold
+reset-b,0,0,1000000,open
+reset-b,1,50000000,51000000,close
+reset-b,2,100000000,102000000,hold
