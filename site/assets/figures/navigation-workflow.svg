@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 430" role="img" aria-labelledby="title description">
+  <title id="title">A route is not a drive command</title>
+  <desc id="description">Goal and global map produce a route. A local controller combines that route with recent obstacle data and odometry to choose a command. The executive can stop or replan.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="429" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">AUTONOMY / INDOOR ROVER</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">A route is not a drive command</text>
+
+  <rect x="30" y="106" width="276" height="78" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="334" y="106" width="276" height="78" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <text x="168" y="139" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Global planner</text>
+  <text x="168" y="165" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">Map + goal → route</text>
+  <text x="472" y="139" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Recent observations</text>
+  <text x="472" y="165" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">Stamped scan + odometry</text>
+  <path d="M168 187v30h151v20" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M472 187v30H319" fill="none" stroke="#315e80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="135" y="242" width="370" height="72" rx="10" fill="#e2eee3" stroke="#cbd9cd"/>
+  <text x="320" y="273" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Local controller</text>
+  <text x="320" y="299" fill="#415e50" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Check feasible motion</text>
+  <path d="M320 316v26" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <rect x="135" y="350" width="370" height="48" rx="10" fill="#e6eef5" stroke="#cbd9cd"/>
+  <text x="320" y="381" fill="#315e80" font-family="system-ui, sans-serif" font-size="21" font-weight="600" text-anchor="middle">Forward speed + yaw rate</text>
+</svg>

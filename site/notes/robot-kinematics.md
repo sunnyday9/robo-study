@@ -17,6 +17,11 @@ Start with a horizontal arm with two revolute joints, called a **2R arm**. A rev
 
 ## Build the pose from known frames
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/two-ik-solutions.svg"><img src="/assets/figures/two-ik-solutions.svg" width="640" height="353" loading="lazy" decoding="async" alt="Two arm configurations share one base and one tip target. The solid route has its elbow above the X axis and the dashed route has its elbow below."></a>
+  <figcaption>Both joint solutions reach the same point. Choose a branch using the starting pose, joint limits, and obstacles—not the tip position alone.</figcaption>
+</figure>
+
 Use the convention from [Coordinate frames](/notes/coordinate-frames/). `T_A_B` converts coordinates from B to A. A planar rigid pose belongs to **SE(2)** and can be stored as a 3×3 homogeneous matrix with a 2×2 rotation `R`, a two-component translation `t`, and a final row `[0, 0, 1]`. **SE(3)** is the spatial analogue with a 3×3 proper rotation, three-component translation, and final row `[0, 0, 0, 1]`. The rotation columns are unit perpendicular axes with determinant +1. In both cases the transforms compose as rigid motions, and their inverse has rotation `Rᵀ` and translation `−Rᵀt`. [Modern Robotics on homogeneous transforms](https://modernrobotics.northwestern.edu/nu-gm-book-resource/3-3-1-homogeneous-transformation-matrices/)
 
 For the arm, start at the shoulder frame and rotate by `q1`. The next origin is `L1` along the turned shoulder's +X. Rotate there by `q2`, then move `L2` along the turned elbow's +X to the tip. Multiply the transforms in that written order to obtain `T_base_tip`. Apply it to the tip origin to obtain `p_base`. To solve a target provided in an already calibrated task frame, first apply `T_base_task` to the target. For moving frames, use the transforms and joint states at the relevant observation time.

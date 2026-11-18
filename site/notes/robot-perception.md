@@ -32,6 +32,11 @@ A point cloud holds observed surface coordinates, possibly with color or descrip
 
 ## Pick a baseline and measure errors where they matter
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/sensor-to-map.svg"><img src="/assets/figures/sensor-to-map.svg" width="640" height="305" loading="lazy" decoding="async" alt="A sensor beam supplies free evidence in cells it crosses, occupied evidence at the marked hit, and no evidence in cells beyond the hit."></a>
+  <figcaption>A point cloud records the hit position. An occupancy update uses the ray as well, but space behind the return stays unobserved.</figcaption>
+</figure>
+
 **Detection** associates instances with locations such as boxes. **Semantic segmentation** assigns a category to each pixel or point. **Instance segmentation** also distinguishes individual objects within the same category. Begin with geometry when the task allows it. For a fixed tabletop, estimate or survey its plane, keep points in a height band, and group neighboring points. A learned model can distinguish objects with similar geometry, but requires labeled data and checks under the intended lighting, viewpoints, and backgrounds. A detection box can propose a region for depth processing. Inspect which pixels or points actually support the resulting target.
 
 For masks, intersection over union (IoU) divides their overlapping area by their union. For detections, match predictions and labels under a declared overlap rule, count precision and recall, then vary the confidence threshold. For example, the COCO evaluator reports average precision over multiple IoU thresholds. Measure task-space errors in addition to image-space scores. A one-pixel depth discontinuity can pull a target estimate toward a different surface even with a high mask IoU. Track the fraction of labels yielding a valid 3D target, median and tail position error among valid targets, false positives in empty scenes, and time from acquisition to result. [COCO reference evaluator](https://github.com/cocodataset/cocoapi/blob/master/PythonAPI/pycocotools/cocoeval.py)

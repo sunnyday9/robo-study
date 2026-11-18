@@ -15,6 +15,11 @@ A heartbeat lets you build the bench before you have a robot. Pick a payload who
 
 ## Follow the package from source to process
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/ros-workspace.svg"><img src="/assets/figures/ros-workspace.svg" width="640" height="494" loading="lazy" decoding="async" alt="Edit source, build and install the package, source the overlay in a run shell, then launch the node and observe a heartbeat from another shell."></a>
+  <figcaption>Each step proves a different thing. If the package builds but the heartbeat is missing, verify which installed overlay and executable each shell is using.</figcaption>
+</figure>
+
 The Jazzy installation at `/opt/ros/jazzy` is the **underlay**. Build your workspace against it. The **overlay** is your workspace's installed output, which takes precedence for packages it supplies when you source it after the underlay. Think of it like adding a local build to several search paths at once. Python's import path is only one of them.
 
 ```text

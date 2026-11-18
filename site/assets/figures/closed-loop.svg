@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 359" role="img" aria-labelledby="title description">
+  <title id="title">One tick of a robot loop</title>
+  <desc id="description">Sensor reads the cart. The controller compares the measured distance to a target; limits reduce the requested speed before the plant moves. The resulting state is measured on the next tick.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="358" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">FEEDBACK / CART</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">One tick of a robot loop</text>
+
+  <rect x="28" y="110" width="171" height="78" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="234" y="110" width="172" height="78" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="441" y="110" width="171" height="78" rx="10" fill="#f9eada" stroke="#cbd9cd"/>
+  <text x="113" y="142" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Observe</text>
+  <text x="113" y="168" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">position [m]</text>
+  <text x="320" y="142" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Decide</text>
+  <text x="320" y="168" fill="#415e50" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">target − reading</text>
+  <text x="526" y="142" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Limit</text>
+  <text x="526" y="168" fill="#914923" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">speed [m/s]</text>
+  <path d="M202 149h24" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M410 149h23" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M526 191v29" fill="none" stroke="#914923" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#amber-arrow)"/>
+  <rect x="287" y="226" width="325" height="63" rx="10" fill="#e2eee3" stroke="#cbd9cd"/>
+  <text x="450" y="265" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Move the cart</text>
+  <path d="M284 257H113v-62" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <text x="28" y="328" fill="#415e50" font-family="system-ui, sans-serif" font-size="21" font-weight="600" text-anchor="start">Measure the changed position at the next tick.</text>
+</svg>

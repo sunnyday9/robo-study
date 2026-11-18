@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 375" role="img" aria-labelledby="title description">
+  <title id="title">Three streams make a usable image</title>
+  <desc id="description">Clock, stamped camera output, and transforms at acquisition time are three separate inputs to a ROS consumer.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="374" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <g font-family="system-ui, sans-serif" fill="#153629">
+    <text x="28" y="34" font-size="15" fill="#17664d" font-weight="750">SIMULATION / ROS 2 BRIDGE</text>
+    <text x="28" y="71" font-size="29" font-weight="750">Three streams make a usable image</text>
+    <g text-anchor="middle">
+      <rect x="28" y="108" width="180" height="92" rx="10" fill="white" stroke="#cbd9cd"/>
+      <rect x="230" y="108" width="180" height="92" rx="10" fill="white" stroke="#cbd9cd"/>
+      <rect x="432" y="108" width="180" height="92" rx="10" fill="white" stroke="#cbd9cd"/>
+      <text x="118" y="146" font-size="22" font-weight="750">Clock</text>
+      <text x="320" y="146" font-size="22" font-weight="750">Camera</text>
+      <text x="522" y="146" font-size="22" font-weight="750">Transforms</text>
+      <text x="118" y="176" font-size="18">Simulation time</text>
+      <text x="320" y="176" font-size="18">Image + calibration</text>
+      <text x="522" y="176" font-size="18">Pose at image time</text>
+      <path d="M118 203v44m202-44v44m202-44v44" fill="none" stroke="#17664d" stroke-width="3" marker-end="url(#arrow)"/>
+      <rect x="28" y="255" width="584" height="72" rx="10" fill="#e2eee3" stroke="#cbd9cd"/>
+      <text x="320" y="286" font-size="23" font-weight="750">ROS consumer</text>
+      <text x="320" y="310" font-size="19">Check units, frame, stamp, and delivery.</text>
+    </g>
+    <text x="28" y="354" fill="#415e50" font-size="18">Pixels can arrive even when their transform is missing.</text>
+  </g>
+</svg>

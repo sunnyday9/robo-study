@@ -15,13 +15,10 @@ Our acceptance test is simple: after 40 iterations at 0.1 seconds per iteration,
 
 ## Draw the system before coding it
 
-```text
-   reference [m] ─▶ controller ─▶ requested speed [m/s]
-                         ▲                  │ clamp
-                         │                  ▼
-   measured position ◀── sensor ◀── plant integrates speed
-        [m, old or noisy]           true position [m]
-```
+<figure class="lesson-figure">
+  <a href="/assets/figures/closed-loop.svg"><img src="/assets/figures/closed-loop.svg" width="640" height="359" loading="lazy" decoding="async" alt="The controller reads position, calculates a speed, applies a limit, and moves the cart. The cart's changed position is measured on the next tick."></a>
+  <figcaption>Read clockwise from Observe. The observation belongs before the command; the position after movement belongs to the next tick.</figcaption>
+</figure>
 
 **State** is what the plant tracks; here it is true position. **Observation** is what the controller gets to know; here it is a potentially delayed and biased measurement. **Command** is what the controller asks for. **Applied input** is what the plant actually receives after the limit. In a real system every boundary can have more uncertainty, but keeping these names separate helps in any stack.
 

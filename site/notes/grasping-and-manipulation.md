@@ -31,6 +31,11 @@ A common design uses free-space joint planning for transfer and Cartesian motion
 
 ## Update collision geometry when the grip changes
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/grasp-sequence.svg"><img src="/assets/figures/grasp-sequence.svg" width="640" height="373" loading="lazy" decoding="async" alt="Three side views show the gripper approaching an unattached block, confirming grip, and carrying the attached block past a fixture."></a>
+  <figcaption>Before the grip, the block is part of the world. After a confirmed grip, include its shape with the hand when checking the transfer.</figcaption>
+</figure>
+
 A planning scene combines robot state and geometry, obstacles, attached bodies, and collision policy. On confirmed grasp, transition one object from a world pose to a pose fixed relative to the appropriate tool link. Permit only the intended finger-object contacts. Check the attached geometry against obstacles and relevant robot links. On release, update its world pose from measured or simulated state. An attachment in the scene changes geometric collision queries. The real or simulated controller's payload dynamics and grip feedback have their own interfaces.
 
 In MoveIt 2 on ROS 2 Jazzy, the C++ `PlanningSceneInterface` offers `applyAttachedCollisionObject` to apply an attachment synchronously to `move_group`. The header documents that separate scene monitors need to subscribe to the monitored scene to receive that update. Confirm the scene seen by the planner before using a transfer trajectory. `MoveGroupInterface::computeCartesianPath` returns a completion fraction. A partial prefix can be useful for diagnosing where an approach fails. Require a complete, validated approach for a stage whose goal is contact at the target. These details come from the Jazzy source. [Jazzy planning-scene interface](https://github.com/moveit/moveit2/blob/jazzy/moveit_ros/planning_interface/planning_scene_interface/include/moveit/planning_scene_interface/planning_scene_interface.hpp) · [Jazzy Cartesian path interface](https://github.com/moveit/moveit2/blob/jazzy/moveit_ros/planning_interface/move_group_interface/include/moveit/move_group_interface/move_group_interface.hpp)

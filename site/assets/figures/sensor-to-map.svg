@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 305" role="img" aria-labelledby="title description">
+  <title id="title">A hit does not tell you what is behind it</title>
+  <desc id="description">An observed beam goes through three free cells, hits an occupied cell, and provides no information about cells behind that hit.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="304" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">PERCEPTION / RANGE</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">What does one range hit tell you?</text>
+
+  <rect x="58" y="129" width="83" height="58" rx="5" fill="#e2eee3" stroke="#cbd9cd"/>
+  <rect x="145" y="129" width="83" height="58" rx="5" fill="#e2eee3" stroke="#cbd9cd"/>
+  <rect x="232" y="129" width="83" height="58" rx="5" fill="#e2eee3" stroke="#cbd9cd"/>
+  <rect x="319" y="129" width="83" height="58" rx="5" fill="#f9eada" stroke="#cbd9cd"/>
+  <rect x="406" y="129" width="83" height="58" rx="5" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="493" y="129" width="83" height="58" rx="5" fill="#ffffff" stroke="#cbd9cd"/>
+  <path d="M44 157H356" fill="none" stroke="#17664d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M379 157h174" fill="none" stroke="#415e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 8"/>
+  <circle cx="43" cy="157" r="8" fill="#153629" stroke="none"/>
+  <circle cx="360" cy="157" r="10" fill="#914923" stroke="none"/>
+  <text x="43" y="222" fill="#153629" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Sensor</text>
+  <text x="169" y="222" fill="#17664d" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="start">Free evidence</text>
+  <text x="338" y="222" fill="#914923" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="start">Hit</text>
+  <text x="441" y="222" fill="#415e50" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="start">Unobserved</text>
+  <text x="28" y="272" fill="#415e50" font-family="system-ui, sans-serif" font-size="21" font-weight="600" text-anchor="start">Do not clear space beyond the measured return.</text>
+</svg>

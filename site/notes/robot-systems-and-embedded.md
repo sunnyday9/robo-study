@@ -9,6 +9,11 @@ minutes: 50
 
 ## Decide what must keep working when the host stalls
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/embedded-boundaries.svg"><img src="/assets/figures/embedded-boundaries.svg" width="640" height="387" loading="lazy" decoding="async" alt="The host sends targets to a microcontroller. The microcontroller checks and expires targets, sends a command to the drive, and receives local wheel feedback independently of the host."></a>
+  <figcaption>Solid arrows are commands; dashed arrows are feedback. This shows control ownership, not wiring or a safety-rated protective circuit.</figcaption>
+</figure>
+
 An indoor rover has two driven wheels. Its host computer estimates pose, plans a route, and sends desired forward speed and yaw rate. With wheel radius `r` and contact-track width `b` in meters, the ideal no-slip wheel targets are `left = (v − bω/2) / r` and `right = (v + bω/2) / r`, both in radians per second. Positive wheel rates propel the rover forward. With `v = 0.20 m/s`, `ω = +0.40 rad/s`, `r = 0.05 m`, and `b = 0.30 m`, the targets are `2.8` and `5.2 rad/s`. The right wheel travels faster for a left turn in the `base_link` convention of forward X, left Y, and up Z. Slip and effective radius change the motion that actually results. [ROS REP 103](https://raw.githubusercontent.com/ros-infrastructure/rep/master/rep-0103.rst) · [Coordinate frames](/notes/coordinate-frames/)
 
 The process that computes those targets can stall while a camera allocates a frame or a planner searches a crowded map. A microcontroller (MCU) can sample encoders, regulate wheel speed, and expire host commands on a local clock even during that stall. The drive supplies and regulates motor power. Some drives already close current and velocity loops, in which case the MCU can supervise targets and feedback instead of duplicating those loops. Give each loop one owner. For the teaching rover, the host sends wheel targets every 20 ms, the MCU checks them every 5 ms, and the modeled command lease expires 50 ms after the last accepted receive event. Choose those rates by analyzing dynamics and failure paths for an actual design.

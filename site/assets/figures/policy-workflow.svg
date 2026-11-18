@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 494" role="img" aria-labelledby="title description">
+  <title id="title">Turn demonstrations into commands</title>
+  <desc id="description">Collect pre-action observations and demonstrated actions. Train using the configured processors and save them with the model. Use them at rollout and measure outcomes on new resets.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="493" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">LEARNING / TRAIN TO ROLLOUT</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">Turn demonstrations into commands</text>
+  <rect x="62" y="105" width="548" height="60" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <circle cx="34" cy="135" r="15" fill="#17664d" stroke="none"/>
+  <text x="34" y="141" fill="#ffffff" font-family="system-ui, sans-serif" font-size="17" font-weight="750" text-anchor="middle">1</text>
+  <text x="82" y="141" fill="#153629" font-family="system-ui, sans-serif" font-size="22" font-weight="750" text-anchor="start">Record episodes</text>
+  <text x="304" y="141" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Observation t → action t</text>
+  <path d="M34 153v44" fill="none" stroke="#17664d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <rect x="62" y="196" width="548" height="60" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <circle cx="34" cy="226" r="15" fill="#17664d" stroke="none"/>
+  <text x="34" y="232" fill="#ffffff" font-family="system-ui, sans-serif" font-size="17" font-weight="750" text-anchor="middle">2</text>
+  <text x="82" y="232" fill="#153629" font-family="system-ui, sans-serif" font-size="22" font-weight="750" text-anchor="start">Train policy</text>
+  <text x="304" y="232" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Process inputs and targets</text>
+  <path d="M34 244v44" fill="none" stroke="#17664d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <rect x="62" y="287" width="548" height="60" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <circle cx="34" cy="317" r="15" fill="#17664d" stroke="none"/>
+  <text x="34" y="323" fill="#ffffff" font-family="system-ui, sans-serif" font-size="17" font-weight="750" text-anchor="middle">3</text>
+  <text x="82" y="323" fill="#153629" font-family="system-ui, sans-serif" font-size="22" font-weight="750" text-anchor="start">Save checkpoint</text>
+  <text x="304" y="323" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Weights + both processors</text>
+  <path d="M34 335v44" fill="none" stroke="#17664d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <rect x="62" y="378" width="548" height="60" rx="10" fill="#e6eef5" stroke="#cbd9cd"/>
+  <circle cx="34" cy="408" r="15" fill="#315e80" stroke="none"/>
+  <text x="34" y="414" fill="#ffffff" font-family="system-ui, sans-serif" font-size="17" font-weight="750" text-anchor="middle">4</text>
+  <text x="82" y="414" fill="#153629" font-family="system-ui, sans-serif" font-size="22" font-weight="750" text-anchor="start">Run closed loop</text>
+  <text x="304" y="414" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Decode actions; score new resets</text>
+  <text x="28" y="470" fill="#415e50" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="start">An offline fit does not measure recovery or task success.</text>
+</svg>

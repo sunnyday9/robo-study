@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 387" role="img" aria-labelledby="title description">
+  <title id="title">Two loops, different owners</title>
+  <desc id="description">The host owns planning and sends targets. The microcontroller owns the fast loop, gets wheel observations, and can expire old commands on its own timebase. The drive applies power.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="386" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">HARDWARE / CONTROLLER HANDOFF</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">Two loops, different owners</text>
+
+  <rect x="30" y="110" width="262" height="84" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="347" y="110" width="263" height="84" rx="10" fill="#e2eee3" stroke="#cbd9cd"/>
+  <text x="161" y="143" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Host computer</text>
+  <text x="161" y="172" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">Plan + send targets</text>
+  <text x="478" y="143" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Microcontroller</text>
+  <text x="478" y="172" fill="#415e50" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle">Validate + expire targets</text>
+  <path d="M296 137h44" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M342 168h-44" fill="none" stroke="#315e80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 5" marker-end="url(#blue-arrow)"/>
+  <rect x="347" y="264" width="263" height="66" rx="10" fill="#e6eef5" stroke="#cbd9cd"/>
+  <text x="478" y="305" fill="#153629" font-family="system-ui, sans-serif" font-size="23" font-weight="750" text-anchor="middle">Drive + wheels</text>
+  <path d="M500 198v57" fill="none" stroke="#17664d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#green-arrow)"/>
+  <path d="M456 260v-60" fill="none" stroke="#315e80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 5" marker-end="url(#blue-arrow)"/>
+  <text x="30" y="234" fill="#17664d" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Solid: command</text>
+  <text x="30" y="264" fill="#315e80" font-family="system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="start">Dashed: feedback</text>
+  <text x="30" y="359" fill="#415e50" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="start">A host stall must not renew the local command lease.</text>
+</svg>

@@ -89,6 +89,10 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 .prose p, .prose ol, .prose ul, .prose pre { margin-block: .75rem; }
 .prose :is(td, th, p, li) { overflow-wrap: anywhere; }
 .prose img { height: auto; margin-block: 1rem; }
+.prose .lesson-figure { margin-block: 1.35rem; }
+.lesson-figure a, .prose .lesson-figure img { display: block; width: 100%; }
+.prose .lesson-figure img { margin: 0; }
+.lesson-figure figcaption { border-left: .2rem solid var(--line); padding-left: .8rem; margin-top: .65rem; color: var(--muted); font-size: .91rem; }
 .prose table { width: 100%; border-collapse: collapse; font-size: .94rem; margin-block: 1rem; }
 .prose :is(td, th) { text-align: left; vertical-align: top; padding: .55rem; border: 1px solid var(--line); }
 .prose th { background: #e6ede1; }

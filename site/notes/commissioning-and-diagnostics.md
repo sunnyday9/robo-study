@@ -9,6 +9,11 @@ minutes: 50
 
 ## Commission one claim at a time
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/commissioning-ladder.svg"><img src="/assets/figures/commissioning-ladder.svg" width="640" height="494" loading="lazy" decoding="async" alt="Four gates: isolated review, simulation, a dry run with inert output, and a separately authorized supervised physical test."></a>
+  <figcaption>Each gate needs its own evidence. A successful dry run does not authorize physical operation.</figcaption>
+</figure>
+
 A rover turns in the wrong direction in its first integration test. An engineer might reverse a motor in configuration, change a TF frame, or add a minus sign to the yaw controller. Each change could hide an error at another boundary. Commissioning starts with the installed machine and its intended use, then checks progressively larger claims against a known configuration. Start from one command with a known expected response. Trace the command through conversion to wheel targets, receiver acceptance, and measured response. Fix the first boundary that violates its contract.
 
 Write the acceptance plan while you can still change the design. Identify the responsible supervisor, permitted area and machine state, protective functions, abort conditions, and evidence needed to advance. An emergency stop, drive inhibit, normal controlled stop, and isolation procedure are distinct mechanisms with different effects. Physical checks and recovery follow the approved procedure for the specific machine. The work below runs offline. [NASA verification and acceptance planning](https://www.nasa.gov/reference/system-engineering-handbook-appendix/)

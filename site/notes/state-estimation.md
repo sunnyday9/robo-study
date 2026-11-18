@@ -15,6 +15,11 @@ Define your state by what must be inferred. The lab needs one coordinate `x` in 
 
 ## Bayes filtering: propagate, then condition
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/estimator-cycle.svg"><img src="/assets/figures/estimator-cycle.svg" width="640" height="420" loading="lazy" decoding="async" alt="Wheel motion propagates the previous estimate. A valid wall measurement corrects the prediction; a missing or rejected measurement leaves the prediction unchanged."></a>
+  <figcaption>Prediction runs even when a wall fix is missing. Applying a correction is a separate decision that depends on time, geometry, and the size of the residual.</figcaption>
+</figure>
+
 A belief assigns probabilities to possible states. At each step, use a motion model `p(x_k | x_prev, u_k)` to spread the previous belief over the new state. Here `u_k` denotes the observed wheel increment used as a motion input. When a measurement arrives, multiply the predicted belief by its likelihood `p(z_k | x_k)` and normalize. The factorization assumes that the chosen state contains the history needed by the motion model, and that the measurement is conditionally independent of earlier data given that state and the measurement model.
 
 ```text

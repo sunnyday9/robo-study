@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 353" role="img" aria-labelledby="title description">
+  <title id="title">One target, two elbow poses</title>
+  <desc id="description">Two configurations of the same two-link arm reach one target. Their elbow positions differ. The drawing is schematic, with base axes X right and Y up.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="352" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">KINEMATICS / TOP VIEW</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">One target, two elbow poses</text>
+
+  <path d="M104 241h470" fill="none" stroke="#17664d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 7" marker-end="url(#green-arrow)"/>
+  <path d="M104 243V105" fill="none" stroke="#17664d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 7" marker-end="url(#green-arrow)"/>
+  <path d="M104 240 285 155 497 240" fill="none" stroke="#315e80" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M104 240 285 325 497 240" fill="none" stroke="#914923" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 8"/>
+  <circle cx="104" cy="240" r="10" fill="#153629" stroke="none"/>
+  <circle cx="285" cy="155" r="10" fill="#315e80" stroke="none"/>
+  <circle cx="285" cy="325" r="10" fill="#914923" stroke="none"/>
+  <circle cx="497" cy="240" r="10" fill="#17664d" stroke="none"/>
+  <text x="302" y="146" fill="#315e80" font-family="system-ui, sans-serif" font-size="23" font-weight="600" text-anchor="start">Elbow A</text>
+  <text x="308" y="333" fill="#914923" font-family="system-ui, sans-serif" font-size="23" font-weight="600" text-anchor="start">Elbow B</text>
+  <text x="505" y="226" fill="#153629" font-family="system-ui, sans-serif" font-size="21" font-weight="600" text-anchor="start">Same tip</text>
+  <text x="37" y="274" fill="#153629" font-family="system-ui, sans-serif" font-size="21" font-weight="600" text-anchor="start">Base</text>
+  <text x="573" y="263" fill="#415e50" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="start">+X</text>
+  <text x="62" y="111" fill="#415e50" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="start">+Y</text>
+</svg>

@@ -9,6 +9,11 @@ minutes: 55
 
 ## Prove the route from a batch to a command
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/policy-workflow.svg"><img src="/assets/figures/policy-workflow.svg" width="640" height="494" loading="lazy" decoding="async" alt="Record observation-action pairs, train with processing, save the model and processors together, and evaluate decoded commands in closed loop."></a>
+  <figcaption>Follow one sample across the workflow. Saving only the weights leaves out the conversions that give a prediction its meaning at rollout time.</figcaption>
+</figure>
+
 If a trained pusher drives to the origin, your first question is whether it *chose* the origin. A policy can predict a reasonable action in standardized coordinates while the controller reads those two numbers as absolute position. A model can also choose a coherent maneuver and keep executing it after the object has moved away. Build a checkpoint that can tell these failures apart. The observable target is a finite training update, a reloadable policy with its processors, and a trace that says which observation generated each issued command.
 
 ## Decide what the model predicts

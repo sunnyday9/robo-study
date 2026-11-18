@@ -28,6 +28,11 @@ There is no single stack called “robotics.” A manipulator commands joints an
 
 ## Read the common core, then specialize
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/study-path.svg"><img src="/assets/figures/study-path.svg" width="640" height="494" loading="lazy" decoding="async" alt="Four milestones: start with a CPU-only robot loop, learn motion and sensing, integrate through ROS and simulation, then build a specialty project."></a>
+  <figcaption>Use this as an evidence ladder: reproduce a result, explain one failure case, then add another layer. Select any figure to open it at full size.</figcaption>
+</figure>
+
 | Stage | Study | Evidence you can keep |
 | --- | --- | --- |
 | First steps | [Robot loop](/notes/robot-loop/), [math and measurement](/notes/robot-math-and-measurement/), [frames](/notes/coordinate-frames/) | A Python run, a deliberately broken run, and an explanation of which assumption changed |

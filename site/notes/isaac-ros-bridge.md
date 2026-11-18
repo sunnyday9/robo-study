@@ -21,6 +21,11 @@ The bridge translates selected simulation state and sensor products into typed R
 
 ## Follow execution, data, and time through the graph
 
+<figure class="lesson-figure">
+  <a href="/assets/figures/isaac-bridge.svg"><img src="/assets/figures/isaac-bridge.svg" width="640" height="375" loading="lazy" decoding="async" alt="Clock, stamped image and calibration, and camera transforms are separate inputs to a ROS consumer."></a>
+  <figcaption>Check the branches independently. A visible image proves camera delivery, not that the consumer can find a transform at the image stamp.</figcaption>
+</figure>
+
 ```text
 On Playback Tick -- exec -----------------> ROS 2 Publish Clock
 Isaac Read Simulation Time -- seconds ---->         | /clock

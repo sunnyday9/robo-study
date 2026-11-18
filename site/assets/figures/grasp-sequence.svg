@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 373" role="img" aria-labelledby="title description">
+  <title id="title">The carried block changes clearance</title>
+  <desc id="description">The open hand approaches a block in the world. After a verified grasp, the planner treats the block as attached, and the transfer must clear both fingers and block past the fixture.</desc>
+  <defs>
+    <marker id="green-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#17664d" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#315e80" d="M0 1l9 4-9 4z"/></marker>
+    <marker id="amber-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path fill="#914923" d="M0 1l9 4-9 4z"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="639" height="372" rx="15" fill="#f2f5ed" stroke="#cbd9cd"/>
+  <text x="28" y="34" fill="#17664d" font-family="system-ui, sans-serif" font-size="15" font-weight="750" text-anchor="start">MANIPULATION / SIDE VIEW</text>
+  <text x="28" y="71" fill="#153629" font-family="system-ui, sans-serif" font-size="29" font-weight="750" text-anchor="start">The carried block changes clearance</text>
+
+  <rect x="26" y="105" width="190" height="213" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="225" y="105" width="190" height="213" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <rect x="424" y="105" width="190" height="213" rx="10" fill="#ffffff" stroke="#cbd9cd"/>
+  <text x="121" y="139" fill="#153629" font-family="system-ui, sans-serif" font-size="21" font-weight="750" text-anchor="middle">Approach</text>
+  <text x="320" y="139" fill="#153629" font-family="system-ui, sans-serif" font-size="21" font-weight="750" text-anchor="middle">Confirm grip</text>
+  <text x="519" y="139" fill="#153629" font-family="system-ui, sans-serif" font-size="21" font-weight="750" text-anchor="middle">Transfer</text>
+  <path d="M87 200v43m68-43v43m-68-43h68" fill="none" stroke="#315e80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M121 160v25" fill="none" stroke="#315e80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue-arrow)"/>
+  <rect x="100" y="251" width="42" height="32" rx="2" fill="#f9eada" stroke="#914923"/>
+  <path d="M57 284h128" fill="none" stroke="#415e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M290 209v38m60-38v38m-60-38h60" fill="none" stroke="#315e80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="299" y="236" width="42" height="37" rx="2" fill="#f9eada" stroke="#914923"/>
+  <path d="M290 231h60v46h-60z" fill="none" stroke="#914923" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 5"/>
+  <path d="M256 284h128" fill="none" stroke="#415e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M476 180v35m60-35v35m-60-35h60" fill="none" stroke="#315e80" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="485" y="204" width="42" height="36" rx="2" fill="#f9eada" stroke="#914923"/>
+  <path d="M476 198h60v47h-60z" fill="none" stroke="#914923" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 5"/>
+  <rect x="548" y="253" width="42" height="33" rx="3" fill="#e2eee3" stroke="#17664d"/>
+  <path d="M453 288h133" fill="none" stroke="#415e50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M540 228h48" fill="none" stroke="#315e80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue-arrow)"/>
+  <text x="28" y="349" fill="#415e50" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="start">Recheck the whole carried shape against the fixture.</text>
+</svg>
