@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" role="img" aria-labelledby="title desc">
+  <title id="title">Measured positions in the toy feedback lab</title>
+  <desc id="desc">At 1, 3, and 12 seconds, P remains below the target, ordinary PI overshoots at the middle sample, and guarded PI approaches the target. Straight segments join sparse measurements and do not show the continuous trajectory.</desc>
+  <rect width="680" height="330" rx="14" fill="#edf2e7"/>
+  <g fill="#132f26" font-family="system-ui, sans-serif" font-size="18">
+    <text x="85" y="30" font-weight="700">Measured position at three checkpoints</text>
+    <text x="28" y="104">0.6</text><text x="28" y="164">0.5</text><text x="28" y="224">0.4</text><text x="28" y="284">0.3</text>
+    <text x="137" y="303">1 s</text><text x="337" y="303">3 s</text><text x="533" y="303">12 s</text>
+    <text x="565" y="149" fill="#43564b">target</text>
+    <text x="563" y="260" fill="#674b8f">P</text>
+    <text x="297" y="117" fill="#9a4424">PI</text>
+    <text x="197" y="201" fill="#146247">guarded PI</text>
+  </g>
+  <path d="M72 88v192h547 M150 100v180 M350 100v180 M550 100v180" stroke="#9caf9e" fill="none"/>
+  <path d="M72 160h547" stroke="#43564b" stroke-dasharray="6 5" stroke-width="2"/>
+  <path d="m150 264 200 -6h200" stroke="#674b8f" stroke-width="3" fill="none"/>
+  <path d="m150 212 200 -80 200 28" stroke="#9a4424" stroke-width="3" fill="none"/>
+  <path d="m150 225 200 -63 200 -2" stroke="#146247" stroke-width="3" stroke-dasharray="7 3" fill="none"/>
+  <g fill="#674b8f"><circle cx="150" cy="264" r="5"/><circle cx="350" cy="258" r="5"/><circle cx="550" cy="258" r="5"/></g>
+  <g fill="#9a4424"><circle cx="150" cy="212" r="5"/><circle cx="350" cy="132" r="5"/><circle cx="550" cy="160" r="6"/></g>
+  <g fill="#146247"><rect x="146" y="221" width="8" height="8"/><rect x="346" y="158" width="8" height="8"/><rect x="546" y="156" width="8" height="8"/></g>
+</svg>

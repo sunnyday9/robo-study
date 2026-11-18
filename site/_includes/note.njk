@@ -1,7 +1,8 @@
 ---
 layout: base.njk
 ---
-<article class="reader">
+<div class="lecture-layout">
+<article class="reader lecture">
   {% set notes = collections.notes | sort(attribute="data.order") %}
   <a class="back" href="/#notes">← Learning path</a>
   <header class="note-heading">
@@ -15,7 +16,11 @@ layout: base.njk
     {% if minutes %}<div><dt>Study time</dt><dd>{{ minutes }} min</dd></div>{% endif %}
   </dl>
   {% endif %}
-  <div class="prose">
+  <nav class="lecture-outline" aria-label="In this lecture" hidden>
+    <p class="eyebrow">IN THIS LECTURE</p>
+    <ol></ol>
+  </nav>
+  <div class="prose lecture-body">
     {{ content | safe }}
   </div>
   {% for note in notes %}
@@ -24,3 +29,5 @@ layout: base.njk
     {% endif %}
   {% endfor %}
 </article>
+</div>
+<script src="/assets/lecture.js" defer></script>

@@ -2,6 +2,14 @@
 
 The course assumes Python, data structures, and basic machine learning. It adds the robotics-specific contracts: coordinate frames, units, message time, bounded feedback, environment compatibility, and evaluation under closed-loop dynamics.
 
+## Lecture edition
+
+The [AI Systems Performance Engineering chapter materials](https://se7en.mintlify.app/books/ai-systems-performance-engineering/chapters/ch01) served as a teaching-format reference: explanatory sections, figures that support the argument, and optional details without interrupting the main path. This course uses original robotics examples. Each lecture starts with an engineering problem, explains a concrete mechanism, then asks the learner to build a small baseline, vary one input, and explain the result. Chapter outlines and collapsible solutions support longer sessions without putting answers in the reading path.
+
+Review scope: keep the same 22 chapter routes, separate setup success from tool integration, and carry a single tabletop scenario across the course without implying that Isaac Sim recordings can be loaded into LeRobot as-is. Use runnable snippets where the prerequisites exist; distinguish source verification, measured toy results, and expected robotics runtime outcomes.
+
+The lecture build rendered all 24 pages with unique IDs, valid internal links, and at least two exercise solutions per chapter. Browser verification covered outline navigation and revealing a solution. The coordinate, projection, feedback, and frame-selection snippets ran locally, and the trace validator accepted the baseline and rejected the tightened skew budget. The CPU capstone measured 0/3 time-only successes despite a low offline action error on the held-out fixture, versus 3/3 with feedback. This edition did not qualify the live ROS, Isaac Sim, or full LeRobot training and evaluation paths.
+
 ## Review decisions
 
 | Area | What was reconciled |

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 250" role="img" aria-labelledby="title desc">
+  <title id="title">Two points at different depths on the same viewing ray</title>
+  <desc id="desc">In a side view with depth increasing rightward, the ray from the optical center crosses the virtual image plane once and continues through a near point and a far point. Both produce the same horizontal pixel coordinate.</desc>
+  <rect width="680" height="250" rx="14" fill="#edf2e7"/>
+  <path d="M82 176H618m-8-5 8 5-8 5M82 176V52m-5 8 5-8 5 8" stroke="#43564b" stroke-width="2" fill="none"/>
+  <path d="M232 32v158" stroke="#5d816e" stroke-width="3" stroke-dasharray="5 5"/>
+  <path d="M82 176 577 44" stroke="#22694d" stroke-width="3"/>
+  <g fill="#22694d">
+    <circle cx="82" cy="176" r="5"/>
+    <circle cx="387" cy="95" r="6"/>
+    <circle cx="537" cy="55" r="6"/>
+  </g>
+  <circle cx="232" cy="136" r="7" fill="#9a4424"/>
+  <g fill="#132f26" font-family="system-ui, sans-serif" font-size="16">
+    <text x="57" y="44">X</text>
+    <text x="601" y="206">depth Z</text>
+    <text x="27" y="206">optical center</text>
+    <text x="175" y="26">virtual plane</text>
+    <text x="246" y="153" fill="#803a20">same pixel u</text>
+    <text x="394" y="119">near point</text>
+    <text x="543" y="79">far point</text>
+    <text x="172" y="229">All points on this ray share the same X/Z ratio.</text>
+  </g>
+</svg>

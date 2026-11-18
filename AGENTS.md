@@ -11,3 +11,7 @@ Use the five default triage labels. Before triaging, read `docs/agents/triage-la
 ### Domain docs
 
 Use a single context: root `CONTEXT.md` and `docs/adr/`. Before exploring or changing domain behavior, read `docs/agents/domain.md`.
+
+## Publishing
+
+After verifying each requested site adjustment, publish it to the existing Vercel project. Push the intended changes to `main`, then verify that the matching Git-triggered production deployment serves the update at https://robo-study.vercel.app/. Respect explicit requests for local-only work.

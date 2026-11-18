@@ -69,6 +69,14 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 .footer a, .back { display: inline-flex; align-items: center; gap: .35rem; min-height: 2.75rem; }
 
 .reader { max-width: 46rem; margin-inline: auto; padding-block: 1.5rem 4rem; }
+.lecture { width: 100%; }
+.lecture-outline { margin-block: 1.7rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--panel); }
+.lecture-outline ol { margin: .5rem 0 0; padding-left: 1.25rem; }
+.lecture-outline li { padding-block: .2rem; }
+.lecture-outline a { display: inline-block; line-height: 1.4; overflow-wrap: anywhere; }
+.lecture-body :is(h2, h3)[id] { scroll-margin-top: 1rem; }
+.lecture-body :is(h2, h3):target { color: #205e47; text-decoration: underline; text-decoration-color: #87ad96; text-underline-offset: .2em; }
+.lecture-body h2 { padding-top: .55rem; border-top: 1px solid var(--line); }
 .note-heading { margin-block: 1.4rem 2rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); }
 .note-heading h1 { margin-block: .5rem .7rem; font-size: clamp(2.5rem, 6vw, 4.35rem); }
 .note-heading > p:last-child { color: var(--muted); font-size: 1.18rem; }
@@ -88,6 +96,7 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 .prose code { background: #e6ede1; border-radius: .2rem; padding: .1em .25em; font: .9em var(--mono); }
 .prose pre { padding: 1rem; overflow: auto; border-radius: .45rem; background: var(--accent); color: #eef7e8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .prose pre code { padding: 0; background: transparent; }
+.prose pre:has(.language-text) { white-space: pre; overflow-wrap: normal; }
 .prose details { margin-top: 1rem; padding-inline: 1rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--panel); }
 .prose summary { padding-block: .7rem; font-weight: 650; cursor: pointer; }
 .prose details p { margin-top: 0; }
@@ -114,6 +123,12 @@ h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -.04em; }
 @media (min-width: 53rem) {
   .hero { grid-template-columns: 1fr 1.05fr; }
   .note-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (min-width: 66rem) {
+  .lecture-layout { padding-right: 15rem; }
+  .lecture { position: relative; }
+  .lecture-outline { position: absolute; inset: 8rem auto auto calc(100% + 2rem); width: 13rem; margin-top: 0; font-size: .88rem; }
 }
 
 @media (max-width: 26rem) {

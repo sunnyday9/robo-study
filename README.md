@@ -1,6 +1,6 @@
 # Robo Study
 
-A self-study course for developers who already know Python, data structures, and basic machine learning. Learn ROS 2, Isaac Sim, LeRobot, and the infrastructure that ties a robotics workflow together. The browser labs and capstone trace exercise need no robotics runtime.
+A lecture-based self-study course for developers who already know Python, data structures, and basic machine learning. Learn the reasoning and development process behind ROS 2, Isaac Sim, LeRobot, and robotics infrastructure. The browser labs and CPU capstone exercises need no robotics runtime.
 
 ## Preview locally
 
@@ -23,7 +23,7 @@ See [the course review](docs/course-review.md) for version choices and the disti
 
 Create a Markdown file under `site/notes/`. Set `title`, `topic`, a short `description`, and an unused quoted `order` (for example, `"05"`) in its front matter. Use `prerequisites` and `minutes` for chapter metadata. The index groups chapters using `site/_data/tracks.json`; use an existing topic or add it to a track.
 
-Use headings for the concept, worked example, practice question, and references. Put the solution in a `<details>` block so readers can try the exercise first. Link to other notes with their site paths, like `/notes/coordinate-frames/`.
+Start with a problem and an observable outcome. Explain the mechanics with a diagram or concrete trace, then walk through a small build and change one input intentionally. Label expected, illustrative, and measured results distinctly. Close with a transfer exercise and a concise summary. Put solutions in `<details>` blocks. Level-two headings appear in the lecture outline; link to other notes using paths like `/notes/coordinate-frames/`.
 
 ## Publish to Vercel
 
